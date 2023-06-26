@@ -55,27 +55,10 @@
                 </div>
                 <ul class="menu">
                     <li>
-                        <a href="#0">events</a>
-                        <ul class="submenu">
-                            <li>
-                                <a href="">Leisure Event</a>
-                            </li>
-                            <li>
-                                <a href="">Cultural Event</a>
-                            </li>
-                            <li>
-                                <a href="">Personal Event</a>
-                            </li>
-                            <li>
-                                <a href="">organizational Event</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="">contact</a>
+                        <a href="">Login</a>
                     </li>
                     <li class="header-button pr-0">
-                        <a href="" style="color: aliceblue">Login</a>
+                        <a href="" style="color: aliceblue">Signup</a>
                     </li>
                 </ul>
                 <div class="header-bar d-lg-none">
@@ -91,6 +74,7 @@
     @yield('konten')
 
     <!-- ==========Newslater-Section========== -->
+    {{-- <footer class="footer-section"> --}}
     <footer class="footer-section">
         <div class="newslater-section padding-bottom">
             <div class="container">

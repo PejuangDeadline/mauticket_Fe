@@ -11,4 +11,9 @@ class HomeController extends Controller
         return view('landingpage.index');
     }
 
+    public function home()
+    {
+        return view('landingpage.home');
+    }
+
 }

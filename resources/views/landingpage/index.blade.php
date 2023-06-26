@@ -3,11 +3,11 @@
 @section('konten')
 
 <!-- ==========Banner-Section========== -->
-<section class="banner-section">
+<section class="banner-section bg-banner">
     <div class="banner-bg bg_img bg-fixed" data-background="{{ asset('/assets/images/gallery/bg.png') }}"></div>
     <div class="container mt-n4">
         <div class="banner-content">
-            <h1 class="title cd-headline clip"><span class="d-block">book</span> tickets for 
+            <h1 class="title cd-headline clip"><span class="d-block">book</span> for 
                 <span class="color-theme cd-words-wrapper p-0 m-0">
                     <b class="is-visible">Yourself</b>
                     <b>Family</b>
@@ -22,7 +22,7 @@
 <!-- ==========Banner-Section========== -->
 
 <!-- ==========Ticket-Search========== -->
-<section class="search-ticket-section padding-top pt-lg-0">
+{{-- <section class="search-ticket-section padding-top pt-lg-0">
     <div class="container">
         <div class="search-tab bg_img" data-background="./assets/images/ticket/ticket-bg01.jpg">
             <div class="row align-items-center mb--20">
@@ -80,11 +80,11 @@
             </div>
         </div>
     </div>
-</section>    
+</section>     --}}
 <!-- ==========Ticket-Search========== -->
 
 <!-- ==========Event-Main-Section========== -->
-<section class="movie-section padding-top padding-bottom bg-two">
+<section class="movie-section padding-top padding-bottom">
     <div class="container">
         <div class="row flex-wrap-reverse justify-content-center">
             <div class="col-lg-3 col-sm-10  mt-50 mt-lg-0">
