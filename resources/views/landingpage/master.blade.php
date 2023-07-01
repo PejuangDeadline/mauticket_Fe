@@ -139,7 +139,7 @@
 
       <!-- /.content-wrapper -->
       <footer class="bg-dark text-inverse">
-        <div class="container py-md-7 mx-auto text-center">
+        <div class="container py-md-7 mx-auto text-center w300 mt-2">
           <img src="{{ asset('assets/img/logo/logolight.svg') }}" alt=""> © 2023. All rights reserved.
           <nav class="social social-white">
             <a href="#"><i class="uil uil-twitter"></i></a>
