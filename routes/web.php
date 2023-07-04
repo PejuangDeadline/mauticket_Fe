@@ -19,4 +19,4 @@ use App\Http\Controllers\HomeController;
 // });
 
 Route::get('/', [HomeController::class, 'landingpage'])->name('landingpage');
-Route::get('/home', [HomeController::class, 'home'])->name('home');
+Route::get('/listevent', [HomeController::class, 'listevent'])->name('listevent');

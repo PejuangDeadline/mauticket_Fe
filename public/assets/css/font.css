@@ -23,3 +23,147 @@
 .w700 {
     font-weight: 700;
 }
+
+.imag {
+    background-color: gray;
+    border-radius: 0.5rem 0.5rem 0 0;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 4/4;
+}
+
+.judulevent {
+    height: 4rem;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+}
+
+.footerevent {
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+}
+
+.detailevent {
+    width: 50%;
+}
+
+/* Jika teks judul panjang lebih dari 2 baris akan titik2 */
+.textevent {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.textlokasi {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.btnmore {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 7px 14px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.lbhbyk {
+    border-color: #ffdb5730;
+    color: rgb(0, 0, 0);
+}
+
+.lbhbyk:hover {
+    background-color: #ffdb57;
+    color: white;
+}
+
+#div1 {
+    max-width: 85vw;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    border: 1px red;
+    position: relative;
+    z-index: 100; /* make sure other div's have z index lesser than this div's */
+}
+
+.searchbody {
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+/* CSS Select2  */
+.my-select2 {
+    width: 100%;
+}
+
+.my-select2 + .select2-container .select2-selection--single {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 15px);
+    padding: 0.5rem 0.5rem;
+    font-size: 0.75rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #4950577d;
+    background-color: #fefefe;
+    background-clip: padding-box;
+    border: 1px solid rgba(8, 60, 130, 0.07);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 1.25rem rgba(30, 34, 40, 0.04);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.my-select2 + .select2-container .select2-selection--single:focus {
+    color: #495057;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 1.25rem rgba(30, 34, 40, 0.04);
+}
+.my-select2 option {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.btnsrch {
+    width: 100%;
+    height: 100%;
+    background-color: #7f39d8;
+    color: rgb(255, 255, 255);
+    padding: 7px 14px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.srch {
+    color: rgb(255, 255, 255);
+}
+
+.srch:hover {
+    background-color: #562595;
+    color: white;
+}
+
+.card-headersearch {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}

@@ -1,69 +1,58 @@
-﻿@extends('landingpage.master')
+﻿@extends('landingpage.masterdetail')
 
 @section('konten')
 
-    <section class="wrapper bg-dark mt-n13">
-      <div class="swiper-container swiper-hero dots-over" data-margin="0" data-autoplay="true" data-autoplaytime="7000" data-nav="true" data-dots="true" data-items="1">
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image" data-image-src="{{ asset('assets/img/bglandingpage/bglandingpage.png') }}">
-              <div class="container h-100 mt-5">
-                <div class="row h-100">
-                  <div class="col-md-11 col-lg-8 col-xl-7 col-xxl-6 mx-auto text-center justify-content-center align-self-center">
-                    <h1 class="cd-headline clip display-1 fs-56 mb-4 text-white w600">Cari karcis untuk
-                      <br>
-                      <span class="color-theme cd-words-wrapper p-0 m-0">
-                        <b class="is-visible">Kamu</b>
-                        <b>Keluarga</b>
-                        <b>Teman</b>
-                        <b>Pasangan</b>
-                      </span>
-                    </h1>
+    <div class="mt-12">
+      <section class="wrapper bg-gray">
+        <div class="container py-3 py-md-5">
+          <nav class="d-inline-block" aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><a href="{{ route('landingpage') }}">Beranda</a></li>
+              <li class="breadcrumb-item active text-muted" aria-current="page">Daftar Acara</li>
+            </ol>
+          </nav>
+        </div>
+      </section>
+    </div>
+    
+    <div class="mt-9">
+      <div id="div1">
+        <div class="mt-n10 mb-n8">
+          <div class="card lift">
+            <div class="searchbody">
+              <div class="card-headersearch mb-2">
+                <div class="mx-auto text-center w500 mt-n1 mb-n1">
+                  Temukan Yang Kamu Mau
+                </div>
+              </div>
+              
+              <span class="row justify-content-between align-items-center">
+                <div class="col-lg-5 mb-3">
+                  <div class="form-floating">
+                    <input id="textInputExample" type="text" class="form-control" placeholder="Text Input">
+                    <label for="textInputExample">Kata Kunci</label>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div id="div1">
-      <div class="mt-n10 mb-n8">
-        <div class="card lift">
-          <div class="searchbody">
-            <div class="card-headersearch mb-2">
-              <div class="mx-auto text-center w500 mt-n1 mb-n1">
-                Temukan Yang Kamu Mau
-              </div>
-            </div>
-            
-            <span class="row justify-content-between align-items-center">
-              <div class="col-lg-5 mb-3">
-                <div class="form-floating">
-                  <input id="textInputExample" type="text" class="form-control" placeholder="Text Input">
-                  <label for="textInputExample">Kata Kunci</label>
+                <div class="col-lg-3 mb-3">
+                    <select id="mySelect2" class="js-example-basic-single my-select2" name="state">
+                      <option value="AL">Semua Tempat</option>
+                      <option value="Jakarta">Jakarta</option>
+                      <option value="Jakarta">Jambi</option>
+                      <option value="Jakarta">Bandung</option>
+                      <option value="Jakarta">Surabaya</option>
+                      <option value="Jakarta">Jogjakarta</option>
+                    </select>
                 </div>
-              </div>
-              <div class="col-lg-3 mb-3">
-                  <select id="mySelect2" class="js-example-basic-single my-select2" name="state">
-                    <option value="AL">Semua Tempat</option>
-                    <option value="Jakarta">Jakarta</option>
-                    <option value="Jakarta">Jambi</option>
-                    <option value="Jakarta">Bandung</option>
-                    <option value="Jakarta">Surabaya</option>
-                    <option value="Jakarta">Jogjakarta</option>
-                  </select>
-              </div>
-              <div class="col-lg-3 mb-3">
-                <input class="form-control" type="text" name="daterange" value="" />
-              </div>
-              <div class="col-lg-1 mb-3">
-                <div class="mx-auto text-center w300">
-                  <button class="btnsrch srch"><i class="uil uil-search"></i></button>
+                <div class="col-lg-3 mb-3">
+                  <input class="form-control" type="text" name="daterange" value="" />
                 </div>
-              </div>
-            </span>
+                <div class="col-lg-1 mb-3">
+                  <div class="mx-auto text-center w300">
+                    <button class="btnsrch srch"><i class="uil uil-search"></i></button>
+                  </div>
+                </div>
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -71,10 +60,7 @@
 
     <section class="wrapper bg-light">
       <div class="container py-14 py-md-13">
-        <h4 class="display-4">Acara Mendatang</h4>
-        <h4 class="display-sub w400 text-ash mb-10">Acara-acara menarik yang bisa kamu datangi bersama pacar atau gebetan kamu</h4>
         <div class="row">
-          
           <div class="col-lg-4 mb-3">
             <div class="swiper-slide mt-3">
               <div class="card">
@@ -367,7 +353,23 @@
         </div>
 
         <div class="text-center w500 mt-4">
-          <a href="{{ route('listevent') }}" class="btnmore lbhbyk">Lebih banyak...</a>
+          <nav class="d-flex" aria-label="pagination">
+            <ul class="pagination mb-0">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true"><i class="uil uil-arrow-left"></i></span>
+                </a>
+              </li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true"><i class="uil uil-arrow-right"></i></span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
 
       </div>

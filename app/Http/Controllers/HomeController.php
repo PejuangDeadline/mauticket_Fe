@@ -11,9 +11,9 @@ class HomeController extends Controller
         return view('landingpage.index');
     }
 
-    public function home()
+    public function listevent()
     {
-        return view('landingpage.home');
+        return view('landingpage.listevent');
     }
 
 }

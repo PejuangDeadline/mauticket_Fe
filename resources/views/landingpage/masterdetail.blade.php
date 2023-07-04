@@ -31,7 +31,8 @@
     <body>
       <div class="content-wrapper">
         <header class="wrapper bg-soft-primary">
-          <nav class="navbar navbar-expand-lg center-nav transparent position-absolute navbar-dark caret-none">
+          {{-- <nav class="navbar navbar-expand-lg center-nav transparent position-absolute navbar-dark caret-none"> --}}
+          <nav class="navbar navbar-expand-lg center-nav transparent position-absolute navbar-light caret-none navbar-clone fixed navbar-stick">
             <div class="container flex-lg-row flex-nowrap align-items-center">
               <div class="navbar-brand w-100" style="padding : 0.8rem">
                 <a href="index.html">
