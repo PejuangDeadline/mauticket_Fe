@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
 
-Route::get('/', [HomeController::class, 'landingpage'])->name('landingpage');
-Route::get('/listevent', [HomeController::class, 'listevent'])->name('listevent');
+Route::get('/listevent', [EventController::class, 'listevent'])->name('listevent');
+Route::post('/search-event', [EventController::class, 'search'])->name('search');

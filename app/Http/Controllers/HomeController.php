@@ -6,14 +6,10 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function landingpage()
+    public function homepage()
     {
-        return view('landingpage.index');
+        return view('homepage.index');
     }
 
-    public function listevent()
-    {
-        return view('landingpage.listevent');
-    }
 
 }

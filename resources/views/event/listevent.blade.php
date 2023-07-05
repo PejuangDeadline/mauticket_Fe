@@ -1,21 +1,23 @@
-﻿@extends('landingpage.masterdetail')
+﻿@extends('layout.navbar')
 
 @section('konten')
 
     <div class="mt-12">
       <section class="wrapper bg-gray">
-        <div class="container py-3 py-md-5">
+        <div class="container py-3 py-md-10">
           <nav class="d-inline-block" aria-label="breadcrumb">
-            <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="{{ route('landingpage') }}">Beranda</a></li>
-              <li class="breadcrumb-item active text-muted" aria-current="page">Daftar Acara</li>
-            </ol>
+            <div class="navplus">
+              <ol class="breadcrumb mb-0 mt-n5">
+                <li class="breadcrumb-item"><a href="{{ route('homepage') }}">Beranda</a></li>
+                <li class="breadcrumb-item active text-muted" aria-current="page">Daftar Acara</li>
+              </ol>
+            </div>
           </nav>
         </div>
       </section>
     </div>
     
-    <div class="mt-9">
+    <div class="mt-3">
       <div id="div1">
         <div class="mt-n10 mb-n8">
           <div class="card lift">
@@ -25,33 +27,35 @@
                   Temukan Yang Kamu Mau
                 </div>
               </div>
-              
-              <span class="row justify-content-between align-items-center">
-                <div class="col-lg-5 mb-3">
-                  <div class="form-floating">
-                    <input id="textInputExample" type="text" class="form-control" placeholder="Text Input">
-                    <label for="textInputExample">Kata Kunci</label>
+              <form action="{{ route('search') }}" method="post" enctype="multipart/form-data" id="myForm">
+                @csrf
+                <span class="row justify-content-between align-items-center">
+                  <div class="col-lg-5 mb-3">
+                    <div class="form-floating">
+                      <input id="textInputExample" type="text" name="keyword" class="form-control" placeholder="Text Input" value="{{ $keyword }}">
+                      <label for="textInputExample">Kata Kunci</label>
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-3 mb-3">
-                    <select id="mySelect2" class="js-example-basic-single my-select2" name="state">
-                      <option value="AL">Semua Tempat</option>
-                      <option value="Jakarta">Jakarta</option>
-                      <option value="Jakarta">Jambi</option>
-                      <option value="Jakarta">Bandung</option>
-                      <option value="Jakarta">Surabaya</option>
-                      <option value="Jakarta">Jogjakarta</option>
-                    </select>
-                </div>
-                <div class="col-lg-3 mb-3">
-                  <input class="form-control" type="text" name="daterange" value="" />
-                </div>
-                <div class="col-lg-1 mb-3">
-                  <div class="mx-auto text-center w300">
-                    <button class="btnsrch srch"><i class="uil uil-search"></i></button>
+                  <div class="col-lg-3 mb-3">
+                      <select id="mySelect2" class="js-example-basic-single my-select2" name="state">
+                        <option value="All" selected>Semua Tempat</option>
+                        <option value="Jakarta" @if($state == "Jakarta") selected="selected" @endif>Jakarta</option>
+                        <option value="Jambi" @if($state == "Jambi") selected="selected" @endif>Jambi</option>
+                        <option value="Bandung" @if($state == "Bandung") selected="selected" @endif>Bandung</option>
+                        <option value="Surabaya" @if($state == "Surabaya") selected="selected" @endif>Surabaya</option>
+                        <option value="Jogjakarta" @if($state == "Jogjakarta") selected="selected" @endif>Jogjakarta</option>
+                      </select>
                   </div>
-                </div>
-              </span>
+                  <div class="col-lg-3 mb-3">
+                    <input class="form-control" type="text" name="daterange" value="{{ $daterange }}" />
+                  </div>
+                  <div class="col-lg-1 mb-3">
+                    <div class="mx-auto text-center w300">
+                      <a id="submitBtn" type="submit" class="btnsrch srch"><i class="uil uil-search"></i></a>
+                    </div>
+                  </div>
+                </span>
+              </form>
             </div>
           </div>
         </div>

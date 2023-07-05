@@ -221,3 +221,12 @@ $(function () {
 $(document).ready(function () {
     $(".js-example-basic-single").select2();
 });
+
+// Submit tag <a>
+document
+    .getElementById("submitBtn")
+    .addEventListener("click", function (event) {
+        event.preventDefault(); // Prevents the default behavior of the anchor tag
+        console.log("hai");
+        document.getElementById("myForm").submit(); // Submits the form with the ID "myForm"
+    });

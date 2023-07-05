@@ -1,32 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
 
-        <title>MauKarcis - Online Karcis Booking</title>
-        <link rel="shortcut icon" href="{{ asset('assets/img/logo/logoicon.png') }}" />
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <link rel="stylesheet" href="{{ asset('assets/css/plugins.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/styleori.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/font.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/other.css') }}">
-
-        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700" rel="stylesheet">
-
-        {{-- Select2  --}}
-        {{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> --}}
-        <link href="{{ asset('assets/css/select2.css') }}" rel="stylesheet" />
-        
-        {{-- DaterangePicker  --}}
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-        
-        
-    </head>
+    @include('layout.include.head')
 
     <body>
       <div class="content-wrapper">
@@ -34,7 +9,7 @@
           <nav class="navbar navbar-expand-lg center-nav transparent position-absolute navbar-dark caret-none">
             <div class="container flex-lg-row flex-nowrap align-items-center">
               <div class="navbar-brand w-100" style="padding : 0.8rem">
-                <a href="index.html">
+                <a href="{{ route('homepage') }}">
                   <img class="logo-dark" src="{{ asset('assets/img/logo/logo3.svg') }}" srcset="{{ asset('assets/img/logo/logo3.svg') }}" alt="">
                   <img class="logo-light" src="{{ asset('assets/img/logo/logo3.svg') }}" srcset="{{ asset('assets/img/logo/logo3.svg') }}" alt="">
                 </a>
@@ -87,36 +62,7 @@
 
       </div>
 
-      <footer class="bg-dark text-inverse">
-        <div class="container py-md-7 mx-auto text-center w300 mt-2">
-          <img src="{{ asset('assets/img/logo/logolight.svg') }}" alt=""> © 2023. All rights reserved.
-          <nav class="social social-white">
-            <a href="#"><i class="uil uil-twitter"></i></a>
-            <a href="#"><i class="uil uil-facebook-f"></i></a>
-            <a href="#"><i class="uil uil-instagram"></i></a>
-            <a href="#"><i class="uil uil-youtube"></i></a>
-          </nav>
-        </div>
-      </footer>
-      <div class="progress-wrap">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
-          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
-        </svg>
-      </div>
-      <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/plugins.js"></script>
-      <script src="{{ asset('assets/js/theme.js') }}"></script>
-
-      <script src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
-      <script src="{{ asset('assets/js/headline.js') }}"></script>
-
-      <!-- Option 1: Bootstrap Bundle with Popper -->
-      {{-- <script src="{{ asset('assets/js/bootstrap.js') }}"></script> --}}
-      
-      <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    
-      {{-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script> --}}
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+      @include('layout.include.footer')
 
     </body>
 </html>
