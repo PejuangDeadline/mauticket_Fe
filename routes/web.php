@@ -18,4 +18,5 @@ use App\Http\Controllers\EventController;
 Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
 
 Route::get('/listevent', [EventController::class, 'listevent'])->name('listevent');
-Route::post('/search-event', [EventController::class, 'search'])->name('search');
+Route::get('/event/detail', [EventController::class, 'detailevent'])->name('detailevent');
+Route::post('/event/search', [EventController::class, 'search'])->name('search');

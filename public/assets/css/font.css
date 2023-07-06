@@ -32,6 +32,24 @@
     aspect-ratio: 4/4;
 }
 
+.imagposter {
+    background-color: gray;
+    border-radius: 0.5rem 0.5rem 0 0;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+    aspect-ratio: 5/2;
+}
+
+.imagbannerdetail {
+    background-color: gray;
+    border-radius: 0.5rem 0.5rem 0 0;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+    aspect-ratio: 6/2;
+}
+
 .judulevent {
     height: 4rem;
     margin-left: 0.7rem;
@@ -64,6 +82,13 @@
     -webkit-box-orient: vertical;
 }
 
+.textjudulbread {
+    width: 150px; /* Adjust the width as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .btnmore {
     border: 2px solid black;
     background-color: white;
@@ -90,7 +115,119 @@
     margin-left: auto !important;
     border: 1px red;
     position: relative;
-    z-index: 100; /* make sure other div's have z index lesser than this div's */
+    z-index: 100;
+}
+
+#poster {
+    max-width: 90vw;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    border: 1px red;
+    position: relative;
+    z-index: 100;
+}
+
+#div2 {
+    max-width: 85vw;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    border: 1px red;
+    position: relative;
+    z-index: 100;
+}
+
+.bodykosong {
+    height: 100vh;
+}
+
+.backbtn {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    background-color: #0000006a;
+    left: 1.5rem;
+    top: 3.5rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    border-radius: 100%;
+    z-index: 1010;
+    transform: translateY(0.75rem);
+    transition: all 0.2s linear, margin-right 0s;
+}
+.backbtn i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.backbtn a {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textbread {
+    display: inline-block;
+}
+.iconbread {
+    display: none;
+}
+
+@media (max-width: 100px) {
+    .backbtn {
+        top: 2rem;
+        left: 1.5rem;
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+}
+@media (max-width: 576px) {
+    .backbtn {
+        top: 1rem;
+        left: 1.5rem;
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+}
+@media (max-width: 768px) {
+    .backbtn {
+        top: 2.5rem;
+        left: 1.5rem;
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+    .textbread {
+        display: none;
+    }
+    .iconbread {
+        display: inline-block;
+    }
+}
+@media (max-width: 992px) {
+    .backbtn {
+        top: 3rem;
+        left: 1rem;
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+}
+@media (max-width: 1200px) {
+    .backbtn {
+        top: 3.5rem;
+        left: 1.5rem;
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+}
+@media (max-width: 1400px) {
+    .backbtn {
+        top: 3.5rem;
+        left: 1.5rem;
+        width: 2.3rem;
+        height: 2.3rem;
+    }
 }
 
 .searchbody {
@@ -177,4 +314,116 @@
         margin-top: 1.5rem;
         margin-bottom: 2rem;
     }
+}
+
+.bgwhite {
+    background-color: #ffffff;
+}
+
+/* button back */
+.btn-kembali {
+    background: #ffffff;
+    border: 0;
+    padding-left: 0;
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+    max-height: 2.5rem;
+    font-size: 0.85rem;
+}
+.btn-kembali i {
+    position: absolute;
+    z-index: 2;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: calc(1.26rem + 0.12vw);
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+
+.sbttl {
+    width: 25%;
+}
+.parent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.image-container {
+    position: relative;
+    height: 350px;
+    width: 100%;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.foreground-image {
+    object-fit: contain;
+    z-index: 1;
+}
+
+.background-image {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 4/4;
+    filter: blur(5px);
+}
+
+.cardharga {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #7f39d8;
+    padding: 10px;
+    position: relative;
+}
+
+.title-harga {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-weight: bold;
+}
+
+.note-harga {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.button-harga {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btnorder {
+    background-color: #7f39d8;
+    color: rgb(255, 255, 255);
+    padding: 7px 34px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.order {
+    border-color: #7f39d8;
+    color: rgb(255, 255, 255);
+}
+
+.order:hover {
+    background-color: #501d92;
+    color: rgb(234, 232, 232);
 }

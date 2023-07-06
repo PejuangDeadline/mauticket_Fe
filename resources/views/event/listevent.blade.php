@@ -8,8 +8,8 @@
           <nav class="d-inline-block" aria-label="breadcrumb">
             <div class="navplus">
               <ol class="breadcrumb mb-0 mt-n5">
-                <li class="breadcrumb-item"><a href="{{ route('homepage') }}">Beranda</a></li>
-                <li class="breadcrumb-item active text-muted" aria-current="page">Daftar Acara</li>
+                <li class="breadcrumb-item"><a href="{{ route('homepage') }}"><span class="textbread">Beranda</span><div class="iconbread"><span style="color: rgba(128, 128, 128, 0)">|</span><i class="fas fa-home"></i></div></a></li>
+                <li class="breadcrumb-item active text-muted"><span class="textbread">Daftar Acara</span><div class="iconbread"><span style="color: rgba(128, 128, 128, 0)">|</span><i class="fas fa-list"></i></div></li>
               </ol>
             </div>
           </nav>
@@ -65,12 +65,13 @@
     <section class="wrapper bg-light">
       <div class="container py-14 py-md-13">
         <div class="row">
+
           <div class="col-lg-4 mb-3">
             <div class="swiper-slide mt-3">
               <div class="card">
                 <article>
                   <figure class="overlay overlay-1 hover-scale rounded mb-5">
-                    <a href="#"> 
+                    <a href="{{ route('detailevent') }}"> 
                       <img class="imag" src="{{ asset('assets/img/photos/posterkapanresign.jpg') }}" alt="" />
                     </a>
                     <figcaption>
@@ -79,7 +80,7 @@
                   </figure>
                   <div class="judulevent">
                     <div class="post-header">
-                      <h2 class="post-title h3 mt-1 mb-5 textevent"><a class="link-dark" href="./blog-post.html">Musikal Kapan Resign?</a></h2>
+                      <h2 class="post-title h3 mt-1 mb-5 textevent"><a class="link-dark" href="{{ route('detailevent') }}">Musikal Kapan Resign?</a></h2>
                     </div>
                   </div>
                   
@@ -88,7 +89,7 @@
                       <div class="row">
                         <div class="detailevent">
                           <ul class="post-meta">
-                            <li><span class="text-dark w400"><img src="{{ asset('assets/img/logo/calendar.svg') }}" style="width: 0.75rem"> 06 - 08 Oct 2023</span></li>
+                            <li><span class="text-dark w400 textlokasi"><img src="{{ asset('assets/img/logo/calendar.svg') }}" style="width: 0.75rem"> 06 - 08 Oct 2023</span></li>
                           </ul>
                           <ul class="post-meta">
                             <li><span class="text-dark w400"><img src="{{ asset('assets/img/logo/clock.svg') }}" style="width: 0.75rem"> 14:00 & 19:00</span></li>
@@ -214,7 +215,7 @@
               <div class="card">
                 <article>
                   <figure class="overlay overlay-1 hover-scale rounded mb-5">
-                    <a href="#"> 
+                    <a href="{{ route('detailevent') }}"> 
                       <img class="imag" src="{{ asset('assets/img/photos/posterkapanresign.jpg') }}" alt="" />
                     </a>
                     <figcaption>
@@ -223,7 +224,7 @@
                   </figure>
                   <div class="judulevent">
                     <div class="post-header">
-                      <h2 class="post-title h3 mt-1 mb-5 textevent"><a class="link-dark" href="./blog-post.html">Musikal Kapan Resign?</a></h2>
+                      <h2 class="post-title h3 mt-1 mb-5 textevent"><a class="link-dark" href="{{ route('detailevent') }}">Musikal Kapan Resign?</a></h2>
                     </div>
                   </div>
                   
@@ -232,7 +233,7 @@
                       <div class="row">
                         <div class="detailevent">
                           <ul class="post-meta">
-                            <li><span class="text-dark w400"><img src="{{ asset('assets/img/logo/calendar.svg') }}" style="width: 0.75rem"> 06 - 08 Oct 2023</span></li>
+                            <li><span class="text-dark w400 textlokasi"><img src="{{ asset('assets/img/logo/calendar.svg') }}" style="width: 0.75rem"> 06 - 08 Oct 2023</span></li>
                           </ul>
                           <ul class="post-meta">
                             <li><span class="text-dark w400"><img src="{{ asset('assets/img/logo/clock.svg') }}" style="width: 0.75rem"> 14:00 & 19:00</span></li>
@@ -319,7 +320,7 @@
                   </figure>
                   <div class="judulevent">
                     <div class="post-header">
-                      <h2 class="post-title h3 mt-1 mb-5 textevent"><a class="link-dark" href="./blog-post.html">Konser Tunggal Musisi Ibu Kota Bebas Siapa</a></h2>
+                      <h2 class="post-title h3 mt-1 mb-5 textevent"><a class="link-dark" href="./blog-post.html">Contoh Judul Acara Kalau String Panjang Hingga Melebihi</a></h2>
                     </div>
                   </div>
                   

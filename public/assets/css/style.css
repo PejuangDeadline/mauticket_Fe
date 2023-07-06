@@ -173,8 +173,8 @@
     --bs-border-radius-2xl: 2rem;
     --bs-border-radius-pill: 50rem;
     --bs-heading-color: #343f52;
-    --bs-link-color: #3f78e0;
-    --bs-link-hover-color: #3f78e0;
+    --bs-link-color: #7f39d8;
+    --bs-link-hover-color: #21242f;
     --bs-code-color: #60697b;
     --bs-highlight-bg: #fef1de;
 }
@@ -263,6 +263,10 @@ h5 {
 .h6,
 h6 {
     font-size: 0.85rem;
+}
+.h7,
+h7 {
+    font-size: 0.75rem;
 }
 p {
     margin-top: 0;
@@ -741,15 +745,44 @@ progress {
     .container,
     .container-md,
     .container-sm {
-        max-width: 720px;
+        max-width: 738px;
     }
 }
+
+@media (min-width: 868px) {
+    .container,
+    .container-md,
+    .container-sm {
+        max-width: 848px;
+    }
+}
+
 @media (min-width: 992px) {
     .container,
     .container-lg,
     .container-md,
     .container-sm {
-        max-width: 960px;
+        max-width: 979px;
+        /* max-width: 960px; */
+    }
+}
+
+@media (min-width: 1000px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm {
+        max-width: 992px;
+        /* max-width: 960px; */
+    }
+}
+
+@media (min-width: 1100px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm {
+        max-width: 1080px;
     }
 }
 @media (min-width: 1200px) {
@@ -27120,7 +27153,7 @@ form.dark-fields .form-control:focus {
     justify-content: center;
     color: #fff;
     font-size: calc(1.26rem + 0.12vw);
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    /* transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1); */
 }
 @media (min-width: 1200px) {
     .btn.btn-expand i {
@@ -27129,7 +27162,7 @@ form.dark-fields .form-control:focus {
 }
 .btn.btn-expand:before {
     content: "";
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    /* transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1); */
     width: auto;
     height: 2.5rem;
     position: absolute;
@@ -27139,18 +27172,18 @@ form.dark-fields .form-control:focus {
     border-radius: 50rem;
     z-index: 0;
 }
-.btn.btn-expand:hover {
+/* .btn.btn-expand:hover {
     background: 0 0;
     transform: translateY(0);
     color: #fff;
     box-shadow: none;
-}
-.btn.btn-expand:hover i {
+} */
+/* .btn.btn-expand:hover i {
     left: 0.25rem;
-}
-.btn.btn-expand:hover:before {
+} */
+/* .btn.btn-expand:hover:before {
     width: 100%;
-}
+} */
 .btn-group-sm > .btn.btn-expand,
 .btn.btn-expand.btn-sm {
     padding-top: 0.45rem;
@@ -27171,10 +27204,10 @@ form.dark-fields .form-control:focus {
 .btn.btn-expand.btn-sm:before {
     width: 2.15rem;
 }
-.btn-group-sm > .btn.btn-expand:hover:before,
+/* .btn-group-sm > .btn.btn-expand:hover:before,
 .btn.btn-expand.btn-sm:hover:before {
     width: 100%;
-}
+} */
 .btn-group-lg > .btn.btn-expand,
 .btn.btn-expand.btn-lg {
     padding-top: 0.7rem;
@@ -27201,10 +27234,10 @@ form.dark-fields .form-control:focus {
 .btn.btn-expand.btn-lg:before {
     width: 2.9rem;
 }
-.btn-group-lg > .btn.btn-expand:hover:before,
+/* .btn-group-lg > .btn.btn-expand:hover:before,
 .btn.btn-expand.btn-lg:hover:before {
     width: 100%;
-}
+} */
 .input-group .btn:hover {
     transform: none;
 }

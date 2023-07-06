@@ -71,7 +71,7 @@
       </div>
     </div>
 
-    <section class="wrapper bg-light">
+    <section class="wrapper bg-light px-0">
       <div class="container py-14 py-md-13">
         <h4 class="display-4">Acara Mendatang</h4>
         <h4 class="display-sub w400 text-ash mb-10">Acara-acara menarik yang bisa kamu datangi bersama pacar atau gebetan kamu</h4>
@@ -82,7 +82,7 @@
               <div class="card">
                 <article>
                   <figure class="overlay overlay-1 hover-scale rounded mb-5">
-                    <a href="#"> 
+                    <a href="{{ route('detailevent') }}"> 
                       <img class="imag" src="{{ asset('assets/img/photos/posterkapanresign.jpg') }}" alt="" />
                     </a>
                     <figcaption>
@@ -100,7 +100,7 @@
                       <div class="row">
                         <div class="detailevent">
                           <ul class="post-meta">
-                            <li><span class="text-dark w400"><img src="{{ asset('assets/img/logo/calendar.svg') }}" style="width: 0.75rem"> 06 - 08 Oct 2023</span></li>
+                            <li><span class="text-dark w400 textlokasi"><img src="{{ asset('assets/img/logo/calendar.svg') }}" style="width: 0.75rem"> 06 - 08 Oct 2023</span></li>
                           </ul>
                           <ul class="post-meta">
                             <li><span class="text-dark w400"><img src="{{ asset('assets/img/logo/clock.svg') }}" style="width: 0.75rem"> 14:00 & 19:00</span></li>

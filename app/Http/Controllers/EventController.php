@@ -16,6 +16,12 @@ class EventController extends Controller
         return view('event.listevent', compact('keyword', 'state', 'daterange'));
     }
 
+    public function detailevent()
+    {
+
+        return view('event.detailevent');
+    }
+
     public function search(Request $request)
     {
         // dd($request->all());
