@@ -34,8 +34,8 @@
 
 .imagcheckout {
     background-color: gray;
-    border-radius: 0.5rem 0.5rem 0 0;
-    width: 25%;
+    border-radius: 0.5rem 0 0 0.5rem;
+    width: 100%;
     object-fit: cover;
     aspect-ratio: 4/4;
 }
@@ -192,6 +192,199 @@
 .iconbread {
     display: none;
 }
+.icon-checkout {
+    width: 0.75rem;
+}
+.custom-image {
+    width: 20%;
+}
+
+.gambar {
+    flex: 0 0 auto;
+    width: 25%;
+}
+.tulisan {
+    flex: 0 0 auto;
+    width: 75%;
+}
+
+.title-checkout {
+    font-size: 1rem;
+}
+.eo-checkout {
+    font-size: 0.75rem;
+}
+.icon-checkout {
+    width: 0.75rem;
+}
+.time-checkout {
+    font-size: 0.65rem;
+}
+
+@media (min-width: 100px) {
+    .title-checkout {
+        font-size: 0.6rem;
+    }
+    .eo-checkout {
+        font-size: 0.35rem;
+    }
+    .icon-checkout {
+        width: 0.35rem;
+    }
+    .time-checkout {
+        font-size: 0.25rem;
+    }
+}
+
+@media (min-width: 375px) {
+    .title-checkout {
+        font-size: 0.7rem;
+    }
+    .eo-checkout {
+        font-size: 0.45rem;
+    }
+    .icon-checkout {
+        width: 0.45rem;
+    }
+    .time-checkout {
+        font-size: 0.35rem;
+    }
+}
+
+@media (min-width: 450px) {
+    .title-checkout {
+        font-size: 0.85rem;
+    }
+    .eo-checkout {
+        font-size: 0.6rem;
+    }
+    .icon-checkout {
+        width: 0.6rem;
+    }
+    .time-checkout {
+        font-size: 0.5rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .title-checkout {
+        font-size: 1rem;
+    }
+    .eo-checkout {
+        font-size: 0.75rem;
+    }
+    .icon-checkout {
+        width: 0.75rem;
+    }
+    .time-checkout {
+        font-size: 0.65rem;
+    }
+}
+
+@media (min-width: 650px) {
+    .title-checkout {
+        font-size: 1.15rem;
+    }
+    .eo-checkout {
+        font-size: 0.9rem;
+    }
+    .icon-checkout {
+        width: 0.9rem;
+    }
+    .time-checkout {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 710px) {
+    .title-checkout {
+        font-size: 1.25rem;
+    }
+    .eo-checkout {
+        font-size: 0.95rem;
+    }
+    .icon-checkout {
+        width: 0.95rem;
+    }
+    .time-checkout {
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .title-checkout {
+        font-size: 1.25rem;
+    }
+    .eo-checkout {
+        font-size: 0.75rem;
+    }
+    .icon-checkout {
+        width: 0.75rem;
+    }
+    .time-checkout {
+        font-size: 0.65rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .title-checkout {
+        font-size: 1.35rem;
+    }
+    .eo-checkout {
+        font-size: 0.8rem;
+    }
+    .icon-checkout {
+        width: 0.8rem;
+    }
+    .time-checkout {
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .title-checkout {
+        font-size: 1.45rem;
+    }
+    .eo-checkout {
+        font-size: 0.85rem;
+    }
+    .icon-checkout {
+        width: 0.85rem;
+    }
+    .time-checkout {
+        font-size: 0.75rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .title-checkout {
+        font-size: 1.55rem;
+    }
+    .eo-checkout {
+        font-size: 0.85rem;
+    }
+    .icon-checkout {
+        width: 0.85rem;
+    }
+    .time-checkout {
+        font-size: 0.75rem;
+    }
+}
+
+@media (min-width: 1900px) {
+    .title-checkout {
+        font-size: 2.55rem;
+    }
+    .eo-checkout {
+        font-size: 1.3rem;
+    }
+    .icon-checkout {
+        width: 1.3rem;
+    }
+    .time-checkout {
+        font-size: 1rem;
+    }
+}
 
 @media (max-width: 100px) {
     .backbtn {
@@ -227,6 +420,14 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+    }
+    .gambar {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+    .tulisan {
+        flex: 0 0 auto;
+        width: 50%;
     }
 }
 @media (max-width: 992px) {
@@ -452,17 +653,27 @@
     color: rgb(234, 232, 232);
 }
 
-.cardss {
-    display: flex;
-    align-items: center;
+.box {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 20%;
+    height: 20%;
+    background-color: #ffcd0594;
+    border-radius: 0.5rem 0 0.5rem 0;
 }
 
-.cardss img {
+.detail-karcis {
+    flex: 0 0 auto;
+    width: 45%;
+}
+
+.harga-karcis {
+    flex: 0 0 auto;
+    width: 30%;
+}
+
+.jml-karcis {
+    flex: 0 0 auto;
     width: 25%;
-    margin-right: 20px;
-    border-radius: 0.5rem 0.5rem 0 0;
-}
-
-.cardss-content {
-    flex: 1;
 }

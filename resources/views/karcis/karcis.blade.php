@@ -24,33 +24,87 @@
         <div class="card">
           <div class="searchbody">
             <div class="card">
-              <div class="cardss">
-                <img src="{{ asset('assets/img/photos/posterkapanresign.jpg') }}" alt="Image">
-                <div class="cardss-content">
+              <div class="row">
+                <div class="gambar">
+                  <img class="imagcheckout" src="{{ asset('assets/img/photos/posterkapanresign.jpg') }}" alt="Image">
+                </div>
+                <div class="tulisan ml-3 mt-3">
                   <h3 class="title-checkout">Musikal Kapan Resign?</h3>
                   <span class="text-dark w400 eo-checkout">Jakarta Musical Crew</span>
-                  <div class="row">
-                    <div class="detailevent">
-                      <ul class="post-meta">
-                        <li><span class="text-dark w400 time-checkout"><img src="{{ asset('assets/img/logo/calendar.svg') }}" class="icon-checkout" style="width: 0.75rem"> 06 Oct 2023</span></li>
-                      </ul>
-                      <ul class="post-meta">
-                        <li><span class="text-dark w400 time-checkout"><img src="{{ asset('assets/img/logo/clock.svg') }}" class="icon-checkout" style="width: 0.75rem"> 14:00</span></li>
-                      </ul>
-                      <ul class="post-meta mb-3">
-                        <li><span class="text-dark w400 time-checkout"><img src="{{ asset('assets/img/logo/map.svg') }}" class="icon-checkout" style="width: 0.75rem"> Salemba text lokasi panjang </span></li>
-                      </ul>
-                    </div>
+                  <ul class="post-meta">
+                    <li><span class="text-dark w400 time-checkout"><img src="{{ asset('assets/img/logo/calendar.svg') }}" class="icon-checkout"> 06 Oct 2023</span></li>
+                  </ul>
+                  <ul class="post-meta">
+                    <li><span class="text-dark w400 time-checkout"><img src="{{ asset('assets/img/logo/clock.svg') }}" class="icon-checkout"> 14:00</span></li>
+                  </ul>
+                  <ul class="post-meta mb-3">
+                    <li><span class="text-dark w400 time-checkout"><img src="{{ asset('assets/img/logo/map.svg') }}" class="icon-checkout"> Salemba text lokasi panjang </span></li>
+                  </ul>
+                  <div class="box">
+                    <span class="w700 eo-checkout" style="color: #ffffff; position: absolute;
+                      top: 50%;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
+                      line-height: 1.2;">
+                      Best Seat</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="contaianer mb-n12">
+          <div class="row mt-5">
+            <div class="col-lg-6 mb-3">
+              <div class="form-floating">
+                <input id="namadepan" type="text" name="namadepan" class="form-control" placeholder="Masukkan Nama Depan" value="Joe">
+                <label class="w500" style="color: black" for="namadepan">Nama Depan</label>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-3">
+              <div class="form-floating">
+                <input id="namabelakang" type="text" name="namabelakang" class="form-control" placeholder="Masukkan Nama Belakang" value="Doe">
+                <label class="w500" style="color: black" for="namabelakang">Nama Belakang</label>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-3">
+              <div class="form-floating">
+                <input id="email" type="text" name="email" class="form-control" placeholder="Masukkan E-mail" value="jane.doe@gmail.com">
+                <label class="w500" style="color: black" for="email">E-mail</label>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-3">
+              <div class="form-floating">
+                <input id="phonenumber" type="text" name="phonenumber" class="form-control" placeholder="Masukkan Nomor Telepon" value="822xxxx">
+                <label class="w500" style="color: black" for="phonenumber">Nomor Telepon</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h6 class="h7 mt-15 w500">Detail Karcis</h6>
+
+
+        <div class="row">
+          <div class="detail-karcis">
+            <h6 class="post-title h7 eo-checkout">Royal Seat</h6>
+            <p class="mt-n2 time-checkout">Tiket dengan posisi tempat duduk nyaman & strategis</p>
+          </div>
+          <div class="harga-karcis text-center">
+            <h4><span class="text-ungu w700 eo-checkout">Rp 300.000</span></li><h4>
+          </div>
+          <div class="jml-karcis text-end">
+            <h4><span class="w500 eo-checkout">1 Karcis</span></li><h4>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="bodykosong"></div>
+    <br>
+    <br>
+    <br>
+    {{-- <div class="bodykosong"></div> --}}
     
 
 @stop
