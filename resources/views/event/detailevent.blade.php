@@ -98,7 +98,7 @@
                           <h6 class="post-title h7">Royal Seat</h6>
                           <p>Tiket dengan posisi tempat duduk nyaman & strategis</p>
                           <div class="note-harga"><h4><span class="text-ungu w700">Rp 300.000</span></li><h4></div>
-                          <a href="" class="button-harga btnorder order">
+                          <a href="{{ route('karcis') }}" class="button-harga btnorder order">
                             Beli
                           </a>
                         </div>

@@ -32,6 +32,17 @@
     aspect-ratio: 4/4;
 }
 
+.imagcheckout {
+    background-color: gray;
+    border-radius: 0.5rem 0.5rem 0 0;
+    width: 25%;
+    object-fit: cover;
+    aspect-ratio: 4/4;
+}
+.text-checkout {
+    width: 75%;
+}
+
 .imagposter {
     background-color: gray;
     border-radius: 0.5rem 0.5rem 0 0;
@@ -83,6 +94,13 @@
 }
 
 .textjudulbread {
+    width: 150px; /* Adjust the width as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.textjudulbread2 {
     width: 150px; /* Adjust the width as needed */
     overflow: hidden;
     text-overflow: ellipsis;
@@ -203,6 +221,12 @@
     }
     .iconbread {
         display: inline-block;
+    }
+    .textjudulbread2 {
+        width: 50px; /* Adjust the width as needed */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 }
 @media (max-width: 992px) {
@@ -426,4 +450,19 @@
 .order:hover {
     background-color: #501d92;
     color: rgb(234, 232, 232);
+}
+
+.cardss {
+    display: flex;
+    align-items: center;
+}
+
+.cardss img {
+    width: 25%;
+    margin-right: 20px;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.cardss-content {
+    flex: 1;
 }
