@@ -73,6 +73,7 @@
 
     <section class="wrapper bg-light px-0">
       <div class="container py-14 py-md-13">
+        
         <h4 class="display-4">Acara Mendatang</h4>
         <h4 class="display-sub w400 text-ash mb-10">Acara-acara menarik yang bisa kamu datangi bersama pacar atau gebetan kamu</h4>
         <div class="row">
@@ -226,6 +227,9 @@
         <div class="text-center w500 mt-4">
           <a href="{{ route('listevent') }}" class="btnmore lbhbyk">Lebih banyak...</a>
         </div>
+
+        
+
 
       </div>
     </section>
