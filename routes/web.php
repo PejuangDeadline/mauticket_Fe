@@ -23,3 +23,5 @@ Route::get('/event/detail', [EventController::class, 'detailevent'])->name('deta
 Route::post('/event/search', [EventController::class, 'search'])->name('search');
 
 Route::get('/karcis', [KarcisController::class, 'karcis'])->name('karcis');
+Route::get('/listkarcis', [KarcisController::class, 'listkarcis'])->name('listkarcis');
+Route::get('/karcisuser', [KarcisController::class, 'karcisuser'])->name('karcisuser');

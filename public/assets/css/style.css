@@ -10458,6 +10458,10 @@ fieldset:disabled .btn {
 .me-n25 {
     margin-right: -22.5rem !important;
 }
+
+.mb-n0 {
+    margin-bottom: -0.15rem !important;
+}
 .mb-n1 {
     margin-bottom: -0.25rem !important;
 }
@@ -33003,7 +33007,7 @@ button.hamburger:before {
     .swiper-pagination-bullet.swiper-pagination-bullet-active {
     transform: scale(1);
     background: 0 0;
-    border-color: #7F39D8;
+    border-color: #7f39d8;
 }
 .swiper-container {
     -webkit-user-select: none;

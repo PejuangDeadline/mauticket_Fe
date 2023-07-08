@@ -32,8 +32,9 @@
       <div class="mt-n10 mb-n8">
         <div class="card lift">
           <div class="searchbody">
-            <div class="card-headersearch mb-2">
-              <div class="mx-auto text-center w500 mt-n1 mb-n1">
+            {{-- <div class="card-headersearch mb-2"> --}}
+            <div class="mb-2" style="border-top-left-radius: 10px; border-top-right-radius: 10px; padding: 10px; background-image: url('{{ asset('assets/img/logo/bg.png') }}'); background-size: cover; background-position: center;">
+              <div class="mx-auto text-center w500 mt-n1 mb-n1 text-white">
                 Temukan Yang Kamu Mau
               </div>
             </div>

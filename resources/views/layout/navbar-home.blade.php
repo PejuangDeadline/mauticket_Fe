@@ -27,9 +27,14 @@
                       <a class="nav-link" href="#" >Login</a >
                     </li>
                   </ul>
+                  <ul class="navbar-nav d-lg-none">
+                    <li class="nav-item dropdown dropdown-mega">
+                      <a class="nav-link" href="{{ route('listkarcis') }}" >Daftar Karcis</a >
+                    </li>
+                  </ul>
                   <div class="offcanvas-footer d-lg-none">
                     <div>
-                      <a href="cdn-cgi/l/email-protection.html#c5a3acb7b6b1eba9a4b6b185a0a8a4aca9eba6aaa8" class="link-inverse"><span class="__cf_email__" data-cfemail="fd94939b92bd98909c9491d39e9290">customer.care@maukarcis.co.id</span></a>
+                      <a href="cdn-cgi/l/email-protection.html#c5a3acb7b6b1eba9a4b6b185a0a8a4aca9eba6aaa8" class="link-inverse"><span class="__cf_email__" data-cfemail="fd94939b92bd98909c9491d39e9290">info@maukarcis.co.id</span></a>
                       <br> 00 (123) 456 78 90 <br>
                       <nav class="nav social social-white mt-4">
                         <a href="#"><i class="uil uil-twitter"></i></a>

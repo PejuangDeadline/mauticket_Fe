@@ -84,8 +84,6 @@
         </div>
 
         <h6 class="h7 mt-15 w500">Detail Karcis</h6>
-
-
         <div class="row">
           <div class="detail-karcis">
             <h6 class="post-title h7 eo-checkout">Royal Seat</h6>
@@ -94,16 +92,24 @@
           <div class="harga-karcis text-center">
             <h4><span class="text-ungu w700 eo-checkout">Rp 300.000</span></li><h4>
           </div>
-          <div class="jml-karcis text-end">
-            <h4><span class="w500 eo-checkout">1 Karcis</span></li><h4>
+          <div class="jml-karcis">
+            <select class="form-select w500 eo-checkout text-end" name="karcis" style="color: black">
+              <option value="1"> 1 Karcis </option>
+              <option value="2"> 2 Karcis </option>
+              <option value="3"> 3 Karcis </option>
+              <option value="4"> 4 Karcis </option>
+            </select>
           </div>
+        </div>
+
+        <hr class="mt-n1 mb-2">
+
+        <p class="text-end"><span class="time-checkout w-700" style="color: black">Total : <span class="text-ungu w700 eo-checkout">Rp 300.000<span></span></p>
+        <div class="mt-10 mb-10 text-end">
+          <a href="{{ route('karcisuser') }}" class="btnorder order w700">Pembayaran</a>
         </div>
       </div>
     </div>
-
-    <br>
-    <br>
-    <br>
     {{-- <div class="bodykosong"></div> --}}
     
 

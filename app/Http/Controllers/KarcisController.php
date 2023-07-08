@@ -11,4 +11,16 @@ class KarcisController extends Controller
 
         return view('karcis.karcis');
     }
+
+    public function listkarcis()
+    {
+
+        return view('karcis.listkarcisuser');
+    }
+
+    public function karcisuser()
+    {
+
+        return view('karcis.karcisuser');
+    }
 }
