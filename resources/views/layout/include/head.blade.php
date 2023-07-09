@@ -13,11 +13,12 @@
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/font.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/other.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/formstyle.css') }}">
 
+  {{-- Font Poppins --}}
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700" rel="stylesheet">
 
   {{-- Select2  --}}
-  {{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> --}}
   <link href="{{ asset('assets/css/select2.css') }}" rel="stylesheet" />
   
   {{-- DaterangePicker  --}}
@@ -25,6 +26,9 @@
   
   {{-- FontAwesome  --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  {{-- JQUERY  --}}
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 
   
 </head>

@@ -46,7 +46,7 @@
                       left: 50%;
                       transform: translate(-50%, -50%);
                       line-height: 1.2;">
-                      Best Seat</span>
+                      Royal Seat</span>
                   </div>
                 </div>
               </div>

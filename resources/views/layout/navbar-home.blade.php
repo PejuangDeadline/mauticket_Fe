@@ -24,7 +24,7 @@
                 <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
                   <ul class="navbar-nav d-lg-none">
                     <li class="nav-item dropdown dropdown-mega">
-                      <a class="nav-link" href="#" >Login</a >
+                      <a class="nav-link" href="{{ route('signin') }}" >Masuk</a >
                     </li>
                   </ul>
                   <ul class="navbar-nav d-lg-none">
@@ -49,10 +49,10 @@
               <div class="navbar-other w-100 d-flex ms-auto">
                 <ul class="navbar-nav flex-row align-items-center ms-auto">
                   <li class="nav-item test">
-                    <a class="nav-link w600" href="#">Login</a>
+                    <a class="nav-link w600" href="{{ route('signin') }}">Masuk</a>
                   </li>
                   <li class="nav-item test">
-                    <a href="#" class="btn btn-sm btn-primary rounded-pill w600">Sign Up</a>
+                    <a href="{{ route('signup') }}" class="btn btn-sm btn-primary rounded-pill w600">Daftar</a>
                   </li>
                   <li class="nav-item d-lg-none">
                     <button class="hamburger offcanvas-nav-btn"><span></span></button>

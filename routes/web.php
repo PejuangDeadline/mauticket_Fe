@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\KarcisController;
 
@@ -17,6 +18,9 @@ use App\Http\Controllers\KarcisController;
 */
 
 Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
+
+Route::get('/signin', [AuthController::class, 'signin'])->name('signin');
+Route::get('/signup', [AuthController::class, 'signup'])->name('signup');
 
 Route::get('/listevent', [EventController::class, 'listevent'])->name('listevent');
 Route::get('/event/detail', [EventController::class, 'detailevent'])->name('detailevent');

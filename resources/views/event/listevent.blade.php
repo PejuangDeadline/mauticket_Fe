@@ -38,7 +38,7 @@
                     </div>
                   </div>
                   <div class="col-lg-3 mb-3">
-                      <select id="mySelect2" class="js-example-basic-single my-select2" name="state">
+                      <select class="js-example-basic-single my-select2" name="state">
                         <option value="All" selected>Semua Tempat</option>
                         <option value="Jakarta" @if($state == "Jakarta") selected="selected" @endif>Jakarta</option>
                         <option value="Jambi" @if($state == "Jambi") selected="selected" @endif>Jambi</option>
