@@ -31982,7 +31982,8 @@ button.hamburger:before {
     color: inherit;
 }
 .breadcrumb-item a:hover {
-    color: #3f78e0;
+    /* color: #3f78e0; */
+    color: #ffcb05;
 }
 .breadcrumb-item + .breadcrumb-item {
     padding-left: 0.5rem;

@@ -21,20 +21,36 @@
       <div class="container pb-14 pb-md-16">
         <div class="row">
           <div class="col-lg-7 col-xl-6 col-xxl-5 mx-auto mt-n20">
+            <!-- Notifikasi menggunakan flash session data -->
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
+            <!-- End Flash -->
             <div class="card">
               <div class="card-body text-center">
 
                 <h2 class="mb-1 mt-n3 text-center">Daftar</h2>
-                <div style="text-align:center;">
+                <div class="mb-2" style="text-align:center;">
                   <span class="step active"></span>
                   <span class="step" id="round2"></span>
                   <span class="step" id="round3"></span>
                 </div>
                 {{-- <p class="lead mb-6 text-center">Masukkan E-mail/Username dan Kata Sandi.</p> --}}
 
-                <form class="text-start mb-3" action="" method="post">
+                <form action="{{ route('storesignup') }}" method="post" enctype="multipart/form-data" id="SignupForm">
+                  @csrf
 
-                  <div class="card-forms text-start mb-3">
+                  <input type="hidden" id="urlvalidemail" value="{{ route("validation.email", ":email") }}">
+                  <input type="hidden" id="urlvalidusername" value="{{ route("validation.username", ":username") }}">
+
+                  <div class="card-forms text-start mb-6">
                     <div id="step1">
                       <div class="row">
                         <div class="col-lg-6 mb-4">
@@ -141,7 +157,7 @@
                     </div>
                   </div>
 
-                  <div class="row">
+                  <div class="row mt-n5">
                     <div class="col-lg-12">
                       <div id="btnstep1" class="btnstep">
                         <input id="nextstep1" type="button" class="btn btn-primary rounded-pill btn-login mb-2 next" value="Berikutnya">

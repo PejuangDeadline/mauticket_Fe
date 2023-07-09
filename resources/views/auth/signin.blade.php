@@ -17,17 +17,31 @@
       </section>
     </div>
     
+    
     <section class="wrapper bg-light mt-18">
       <div class="container pb-14 pb-md-16">
         <div class="row">
           <div class="col-lg-7 col-xl-6 col-xxl-5 mx-auto mt-n20">
+            <!-- Notifikasi menggunakan flash session data -->
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
+            <!-- End Flash -->
             <div class="card">
               <div class="card-body text-center">
 
                 <h2 class="mb-1 mt-n3 text-center">Masuk</h2>
                 <p class="lead mb-6 text-center">Masukkan E-mail/Username dan Kata Sandi.</p>
 
-                <form class="text-start mb-3" action="" method="post">
+                <form action="{{ route('postsignin') }}" method="post" enctype="multipart/form-data" id="SigninForm">
+                  @csrf
                   <div class="form-floating mb-4">
                     <input type="text" class="form-control" placeholder="Masukkan Email/Username" id="loginEmail" name="loginEmail">
                     <label for="loginEmail">Email / Username</label>

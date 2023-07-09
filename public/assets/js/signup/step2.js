@@ -51,9 +51,25 @@ function checkInputs2() {
     } else if (checkvalusername === true) {
         usernames = 0;
         return setErrorFor(username, " *Jangan Menggunakan Spasi");
-    } else {
-        usernames = 1;
-        setSuccessFor(username);
+    }
+    //Unique Username
+    var url = document.getElementById("urlvalidusername").value;
+    url = url.replace(":username", usernameValue);
+    if (usernameValue) {
+        $.ajax({
+            url: url,
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                if (data === false) {
+                    usernames = 0;
+                    return setErrorFor(username, " *Username Sudah Digunakan");
+                } else {
+                    usernames = 1;
+                    setSuccessFor(username);
+                }
+            },
+        });
     }
 
     if (passwordValue === "") {
