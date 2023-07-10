@@ -22,6 +22,8 @@ Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
 
 Route::get('/signin', [AuthController::class, 'signin'])->name('signin');
 Route::post('/postsignin', [AuthController::class, 'postsignin'])->name('postsignin');
+Route::post('/verifemail', [AuthController::class, 'verifemail'])->name('verifemail');
+
 Route::get('/signup', [AuthController::class, 'signup'])->name('signup');
 Route::post('/storesignup', [AuthController::class, 'storesignup'])->name('storesignup');
 

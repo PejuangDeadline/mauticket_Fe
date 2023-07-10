@@ -38,13 +38,13 @@
               <div class="card-body text-center">
 
                 <h2 class="mb-1 mt-n3 text-center">Masuk</h2>
-                <p class="lead mb-6 text-center">Masukkan E-mail/Username dan Kata Sandi.</p>
+                <p class="lead mb-6 text-center">Masukkan E-mail dan Kata Sandi.</p>
 
                 <form action="{{ route('postsignin') }}" method="post" enctype="multipart/form-data" id="SigninForm">
                   @csrf
                   <div class="form-floating mb-4">
-                    <input type="text" class="form-control" placeholder="Masukkan Email/Username" id="loginEmail" name="loginEmail">
-                    <label for="loginEmail">Email / Username</label>
+                    <input type="text" class="form-control" placeholder="Masukkan E-mail" id="loginEmail" name="loginEmail">
+                    <label for="loginEmail">E-mail</label>
                   </div>
                   <div class="form-floating password-field mb-4">
                     <input type="password" class="form-control" placeholder="Masukkan Kata Sandi" id="loginPassword" name="loginPassword">

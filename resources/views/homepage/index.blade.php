@@ -10,6 +10,18 @@
               <div class="container h-100 mt-5">
                 <div class="row h-100">
                   <div class="col-md-11 col-lg-8 col-xl-7 col-xxl-6 mx-auto text-center justify-content-center align-self-center">
+                    
+                    @if (session('success'))
+                    <div class="alert text-white alert-dismissible fade show rounded-10 mb-1 text-lg-center" role="alert" style="background-color: #7F39D8">
+                      <div class="container">
+                        <div class="alert-inner d-flex justify-content-center align-items-center p-0">
+                          <span class="badge badge-lg bg-white text-primary text-uppercase rounded me-2">{{ session('success') }}</span> Akun Anda Telah Terverifikasi
+                        </div>
+                      </div>
+                      <button type="button" class="btn-close text-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
+                    
                     <h1 class="cd-headline clip display-1 fs-56 mb-4 text-white w600">Cari karcis untuk
                       <br>
                       <span class="color-theme cd-words-wrapper p-0 m-0">

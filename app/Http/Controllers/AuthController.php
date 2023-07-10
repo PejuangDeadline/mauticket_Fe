@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Mail\Welcoming;
+use App\Mail\SendCode;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -28,24 +30,59 @@ class AuthController extends Controller
             'password' => $password
         ];
 
+        if (!Auth::attempt($credentials)) {
+            return redirect()->back()->with(['error' => 'Email / Password Salah']);
+        }
+
         $dologin=Auth::attempt($credentials);
-        dd($dologin);
 
         if($dologin){
             $user = User::where('email',$email)->first();
             $status = $user->is_active;
             if($status == 0){
-                dd("Belum Aktif");
+                $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                $token = substr(str_shuffle($characters), 0, 5);
+
+                //Update token
+                $updatetoken = User::where('id',$user->id)->update(['remember_token' => $token]);
+
+                //Send Token to Email
+                $sent=Mail::to($email)->send(new SendCode($token));
+
+                $error = 0;
+                return view('auth.verifemail', compact('email', 'error'));
             }
+            // Akun Sudah Aktif
             else{
-                dd("Sudah Aktif");
+                //update last login
+                $update_lastlogin=User:: where('email',$email)
+                ->update([
+                    'last_login' => now(),
+                    'login_counter' => $user->login_counter+1,
+                ]);
+
+                return redirect()->route('homepage');
             }
         } else {
             return redirect()->back()->with(['error' => 'Akun Tidak Ditemukan']);
         }
+    }
 
+    public function verifemail(Request $request)
+    {
+        $email = decrypt($request->email);
+        $code = $request->codeVerif;
 
-        // return view('auth.signin');
+        $user = User::where('email', $email)->first();
+        if($code == $user->remember_token){
+            // Update Is Active User
+            $update = User::where('email', $email)->update(['is_active'=>1]);
+
+            return redirect()->route('homepage')->with(['success' => 'Sukses']);
+        } else {
+            $error = 1;
+            return view('auth.verifemail', compact('email', 'error'));
+        }
     }
 
     public function signup()
@@ -92,7 +129,7 @@ class AuthController extends Controller
                 'pathphoto' => $url,
                 'phonenumber' => $phone,
                 'email' => $email,
-                'password' => bcrypt($password),
+                'password' => Hash::make($password),
                 'role' => "User",
                 'is_active' => 0,
             ]);
