@@ -5020,7 +5020,8 @@ fieldset:disabled .btn {
     --bs-dropdown-divider-margin-y: 0.5rem;
     --bs-dropdown-box-shadow: 0rem 0rem 1.25rem rgba(30, 34, 40, 0.06);
     --bs-dropdown-link-color: #343f52;
-    --bs-dropdown-link-hover-color: #3f78e0;
+    /* --bs-dropdown-link-hover-color: #3f78e0; */
+    --bs-dropdown-link-hover-color: #7f39d8;
     --bs-dropdown-link-hover-bg: inherit;
     --bs-dropdown-link-active-color: #3f78e0;
     --bs-dropdown-link-active-bg: inherit;
@@ -30191,6 +30192,7 @@ button:focus {
         .dropdown:not(.dropdown-submenu):hover
         > .dropdown-menu {
         top: 100%;
+        right: 0;
         pointer-events: all;
         visibility: visible;
         opacity: 1;

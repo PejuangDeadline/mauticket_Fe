@@ -70,9 +70,19 @@ function checkInputs2() {
         });
     }
 
+    pwlength = passwordValue.length;
+    var spaceRegex = /\s/;
+    var checkvalpw = spaceRegex.test(passwordValue);
+
     if (passwordValue === "") {
         passwords = 0;
         return setErrorFor(password, " *Silahkan Diisi");
+    } else if (pwlength < 8) {
+        passwords = 0;
+        return setErrorFor(password, " *Password Terlalu Pendek");
+    } else if (checkvalpw === true) {
+        passwords = 0;
+        return setErrorFor(password, " *Password Mengandung Spasi");
     } else {
         passwords = 1;
         setSuccessFor(password);

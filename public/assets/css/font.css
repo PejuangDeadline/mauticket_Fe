@@ -650,6 +650,15 @@
     border-radius: 10px;
 }
 
+.btnedit {
+    background-color: #7f39d8;
+    color: rgb(255, 255, 255);
+    padding: 7px 20px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
 .order {
     border-color: #7f39d8;
     color: rgb(255, 255, 255);
@@ -658,6 +667,25 @@
 .order:hover {
     background-color: #501d92;
     color: rgb(234, 232, 232);
+}
+
+.btngantipw {
+    background-color: #ffdb57;
+    color: rgb(0, 0, 0);
+    padding: 7px 20px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.gantipw {
+    border-color: #ffdb57;
+    color: rgb(0, 0, 0);
+}
+
+.gantipw:hover {
+    background-color: #ffd335;
+    color: rgb(14, 14, 14);
 }
 
 .box {

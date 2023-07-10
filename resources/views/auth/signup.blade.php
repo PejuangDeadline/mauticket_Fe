@@ -152,7 +152,7 @@
                       </div>
                     </div>
                     <div class="col-lg-12 text-center">
-                      <p class="mb-n5">Sudah memiliki akun? <a href="{{ route('signin') }}" class="hover">Masuk</a></p>
+                      <p class="mb-n5">Sudah memiliki akun? <a href="{{ route('login') }}" class="hover">Masuk</a></p>
                     </div>
                   </div>
                 </form>
@@ -290,7 +290,7 @@
                       </div>
                     </div>
                     <div class="col-lg-12">
-                      <p class="mb-n5">Sudah memiliki akun? <a href="{{ route('signin') }}" class="hover">Masuk</a></p>
+                      <p class="mb-n5">Sudah memiliki akun? <a href="{{ route('login') }}" class="hover">Masuk</a></p>
                     </div>
                   </div>
                 </form>

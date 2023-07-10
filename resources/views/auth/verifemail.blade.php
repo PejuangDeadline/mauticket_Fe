@@ -9,7 +9,7 @@
             <div class="navplus">
               <ol class="breadcrumb mb-0 mt-n5">
                 <li class="breadcrumb-item"><a href="{{ route('homepage') }}"><span class="textbread">Beranda</span><div class="iconbread"><span style="color: rgba(128, 128, 128, 0)">|</span><i class="fas fa-home"></i></div></a></li>
-                <li class="breadcrumb-item"><a href="{{ route('signin') }}"><span class="textbread">Masuk</span><div class="iconbread"><span style="color: rgba(128, 128, 128, 0)">|</span><i class="fas fa-sign-in-alt"></i></div></a></li>
+                <li class="breadcrumb-item"><a href="{{ route('login') }}"><span class="textbread">Masuk</span><div class="iconbread"><span style="color: rgba(128, 128, 128, 0)">|</span><i class="fas fa-sign-in-alt"></i></div></a></li>
                 <li class="breadcrumb-item active text-muted"><span class="textbread">Verif Email</span><div class="iconbread"><span style="color: rgba(128, 128, 128, 0)">|</span><i class="fas fa-check-circle"></i></div></li>
               </ol>
             </div>
