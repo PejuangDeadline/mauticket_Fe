@@ -22,7 +22,6 @@ class User extends Authenticatable
         'name',
         'firstname', 
         'lastname',
-        'pathphoto',
         'phonenumber',
         'email',
         'email_verified_at',

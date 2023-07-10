@@ -44,10 +44,10 @@ class AuthController extends Controller
                 $token = substr(str_shuffle($characters), 0, 5);
 
                 //Update token
-                $updatetoken = User::where('id',$user->id)->update(['remember_token' => $token]);
+                // $updatetoken = User::where('id',$user->id)->update(['remember_token' => $token]);
 
                 //Send Token to Email
-                $sent=Mail::to($email)->send(new SendCode($token));
+                // $sent=Mail::to($email)->send(new SendCode($token));
 
                 $error = 0;
                 return view('auth.verifemail', compact('email', 'error'));
@@ -76,7 +76,7 @@ class AuthController extends Controller
         $user = User::where('email', $email)->first();
         if($code == $user->remember_token){
             // Update Is Active User
-            $update = User::where('email', $email)->update(['is_active'=>1]);
+            // $update = User::where('email', $email)->update(['is_active'=>1]);
 
             return redirect()->route('homepage')->with(['success' => 'Sukses']);
         } else {
@@ -114,19 +114,10 @@ class AuthController extends Controller
         DB::beginTransaction();
         try{
 
-            if($request->hasFile('uploadfoto')){
-                $path_loc = $request->file('uploadfoto');
-                $namefile = $path_loc->hashName();
-                $url = $path_loc->move('fotoprofil', $namefile);
-            } else{
-                $url = "";
-            }
-
             $createuser = User::create([
                 'name' => $username,
                 'firstname' => $namadepan,
                 'lastname' => $namabelakang,
-                'pathphoto' => $url,
                 'phonenumber' => $phone,
                 'email' => $email,
                 'password' => Hash::make($password),
@@ -135,9 +126,9 @@ class AuthController extends Controller
             ]);
 
             // Kirim Welcoming Email
-            // $recipient = $email;
-            // $namauser = $namadepan." ".$namabelakang;
-            // $sent=Mail::to($recipient)->send(new Welcoming($namauser));
+            $recipient = $email;
+            $namauser = $namadepan." ".$namabelakang;
+            $sent=Mail::to($recipient)->send(new Welcoming($namauser));
 
             DB::commit();
 

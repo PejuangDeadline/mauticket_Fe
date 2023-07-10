@@ -51,8 +51,18 @@
                     <span class="password-toggle"><i class="uil uil-eye"></i></span>
                     <label for="loginPassword">Kata Sandi</label>
                   </div>
-                  <button type="submit" class="btn btn-primary rounded-pill btn-login w-100 mb-2">Masuk</button>
+                  <button type="submit" class="btn btn-primary rounded-pill btn-login w-100 mb-2" name="sb">Masuk</button>
                 </form>
+
+                <script>
+                  $('#SigninForm').submit(function() {
+                      if (!$('#SigninForm').valid()) return false;
+      
+                      $('#SigninForm button[name=sb]').attr("disabled", "disabled");
+                      $('#SigninForm button[name=sb]').html("Please Wait..");
+                      return true;
+                  });
+                </script>
 
                 <p class="mb-1"><a href="#" class="hover">Lupa Kata Sandi?</a></p>
                 <p class="mb-0">Belum memiliki akun? <a href="{{ route('signup') }}" class="hover">Daftar</a></p>

@@ -6,7 +6,6 @@ const passwordconfirm = document.getElementById("passwordconfirm");
 var usernames = 0;
 var passwords = 0;
 var passwordconfirms = 0;
-// var uploadfotos = 0;
 
 // backstep2
 $("#backstep2").click(function (e) {
@@ -41,7 +40,6 @@ function checkInputs2() {
     const usernameValue = username.value.trim();
     const passwordValue = password.value.trim();
     const passwordconfirmValue = passwordconfirm.value.trim();
-    const uploadfotoValue = uploadfoto.value.trim();
 
     var spaceRegex = /\s/;
     var checkvalusername = spaceRegex.test(usernameValue);
@@ -92,33 +90,7 @@ function checkInputs2() {
         setSuccessFor(passwordconfirm);
     }
 
-    var ExtensionFOTO = uploadfotoValue
-        .substring(uploadfotoValue.lastIndexOf(".") + 1)
-        .toLowerCase();
-    if (uploadfotoValue === "") {
-        uploadfotos = 0;
-        return setErrorFor(uploadfoto, " *Silahkan Diunggah");
-    } else if (
-        ExtensionFOTO == "gif" ||
-        ExtensionFOTO == "png" ||
-        ExtensionFOTO == "bmp" ||
-        ExtensionFOTO == "jpeg" ||
-        ExtensionFOTO == "jpg"
-    ) {
-        uploadfotos = 1;
-        setSuccessFor(uploadfoto);
-    } else {
-        uploadfotos = 0;
-        setSuccessFor(uploadfoto, "*format (.png, .jpg, .jpeg)");
-    }
-
-    if (
-        usernames === 1 &&
-        passwords === 1 &&
-        passwords === 1 &&
-        passwordconfirms === 1 &&
-        uploadfotos === 1
-    ) {
+    if (usernames === 1 && passwords === 1 && passwordconfirms === 1) {
         document.getElementById("step1").hidden = true;
         document.getElementById("step2").hidden = true;
         document.getElementById("step3").hidden = false;
@@ -134,9 +106,6 @@ function checkInputs2() {
 //When Click Field Back to Normal
 username.addEventListener("click", function () {
     defaultInput(username);
-});
-uploadfoto.addEventListener("click", function () {
-    defaultInput(uploadfoto);
 });
 password.addEventListener("click", function () {
     defaultInput(password);

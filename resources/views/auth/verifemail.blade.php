@@ -34,15 +34,25 @@
                 <h2 class="mb-1 mt-n3 text-center">Verifikasi Email</h2>
                 <p class="lead mb-6 text-center">Masukkan Kode Verfifikasi yang telah kami kirimkan ke E-mail <b>{{ $email }}</b></p>
 
-                <form action="{{ route('verifemail') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('verifemail') }}" method="post" enctype="multipart/form-data" id="verifForm">
                   @csrf
                   <input type="hidden" class="form-control" name="email" value="{{ encrypt($email) }}">
                   <div class="form-floating mb-4">
                     <input type="text" class="form-control" placeholder="Masukkan Kode" id="CodeVerif" name="codeVerif">
                     <label for="CodeVerif">Kode Verifikasi</label>
                   </div>
-                  <button type="submit" class="btn btn-primary rounded-pill btn-login w-100 mb-2">Verifikasi</button>
+                  <button type="submit" class="btn btn-primary rounded-pill btn-login w-100 mb-2" name="sb">Verifikasi</button>
                 </form>
+
+                <script>
+                  $('#verifForm').submit(function() {
+                      if (!$('#verifForm').valid()) return false;
+      
+                      $('#verifForm button[name=sb]').attr("disabled", "disabled");
+                      $('#verifForm button[name=sb]').html("Please Wait..");
+                      return true;
+                  });
+                </script>
 
               </div>
             </div>

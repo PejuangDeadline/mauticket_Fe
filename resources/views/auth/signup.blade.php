@@ -91,20 +91,6 @@
                         <span class="password-toggle"><i class="uil uil-eye"></i></span>
                         <label for="passwordconfirm"><label id="pwconfirmlabel">Ulangi Kata Sandi</label><small class="small1"></small></label>
                       </div>
-                      <div class="form-group mb-2">
-                        <div class="row">
-                          <div class="col-lg-12" id="colfoto">
-                            <label><label id="uploadfotolabel">Unggah Foto (Portrait)</label><small class="small1"></small></label>
-                            <input type="file" accept="image/*" class="form-control" name="uploadfoto" id="uploadfoto">
-                          </div>
-                          <div class="col-lg-6">
-                            <div id="previewfoto" class="text-center">
-                              <label id="previewfotolabel">Preview Foto Anda</label>
-                              <img id="previewuploadfoto" src="#" alt="your image" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                     </div>
 
                     <div id="step3" hidden>
@@ -146,12 +132,6 @@
                             <h5 class="mt-n3" style="color: #151a48"><b id="summaryuname"></b></h5>
                           </div>
                         </div>
-                        <div class="col-lg-6">
-                          <div class="form-group">
-                            <label class="form-label">Foto Profil</label>
-                            <img id="previewuploadfoto2" src="#" alt="your image" />
-                          </div>
-                        </div>
                       </div>
 
                     </div>
@@ -168,7 +148,7 @@
                       </div>
                       <div id="btnstep3" class="btnstep" hidden>
                         <input id="backstep3" type="button" class="btn btn-primary rounded-pill w-30 btn-login mb-2 back" value="Kembali">
-                        <button id="nextstep4" type="submit" class="btn btn-primary rounded-pill w-30 btn-login mb-2 next" value="Submit">Daftar</button>
+                        <button id="nextstep4" type="submit" class="btn btn-primary rounded-pill w-30 btn-login mb-2 next" name="sb" value="Submit">Daftar</button>
                       </div>
                     </div>
                     <div class="col-lg-12 text-center">
@@ -176,6 +156,16 @@
                     </div>
                   </div>
                 </form>
+
+                <script>
+                  $('#SignupForm').submit(function() {
+                      if (!$('#SignupForm').valid()) return false;
+      
+                      $('#SignupForm button[name=sb]').attr("disabled", "disabled");
+                      $('#SignupForm button[name=sb]').html("Please Wait..");
+                      return true;
+                  });
+                </script>
 
               </div>
             </div>
