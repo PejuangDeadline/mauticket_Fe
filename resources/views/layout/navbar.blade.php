@@ -98,6 +98,9 @@
                     </li>
                   @endif
 
+                  <li class="nav-item d-lg-none">
+                    <button class="hamburger offcanvas-nav-btn"><span></span></button>
+                  </li>
                 </ul>
               </div>
 
