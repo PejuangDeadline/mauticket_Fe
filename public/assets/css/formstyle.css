@@ -1,0 +1,81 @@
+﻿.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+.step.active {
+    background-color: #ffcd05;
+}
+
+.card-forms {
+    min-height: 45vh;
+    max-height: 45vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+* {
+    scrollbar-width: thin;
+    /* scrollbar-color: #151a48 rgb(255, 255, 255); */
+    scrollbar-color: #7f39d8 rgb(255, 255, 255);
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+}
+
+*::-webkit-scrollbar-thumb {
+    /* background-color: #151a48; */
+    background-color: #7f39d8;
+    border-radius: 20px;
+    border: 3px solid rgb(255, 255, 255);
+    visibility: hidden;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+.btnstep {
+    display: block;
+}
+.next {
+    margin-right: 0;
+    margin-left: auto;
+    display: inline-block;
+    float: right;
+}
+.back {
+    background-color: transparent;
+    color: #7f39d8;
+    margin-left: 0;
+    margin-right: auto;
+    display: inline-block;
+    float: left;
+}
+.keluar {
+    margin-right: 0;
+    margin-left: auto;
+    display: inline-block;
+    /* float: right; */
+}
+.closes {
+    background-color: transparent;
+    color: #7f39d8;
+    margin-left: 0;
+    margin-right: auto;
+    display: inline-block;
+    /* float: left; */
+}
+.sma {
+    display: block;
+}
