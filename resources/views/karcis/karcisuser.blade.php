@@ -1,6 +1,6 @@
-﻿@extends('layout.navbar')
+﻿@extends('master.navbar')
 
-@section('konten')
+@section('content')
 
     <div class="mt-12">
       <section class="wrapper bg-gray">
@@ -73,13 +73,13 @@
           <div class="detnama">
             <div class="form-group">
               <label class="form-label eo-checkout mb-n0">Nama Depan</label>
-              <h3 class="eo-checkout text-ungu">John</h3>
+              <h3 class="eo-checkout text-ungu">{{ $datauser->firstname }}</h3>
             </div>
           </div>
           <div class="detnama">
             <div class="form-group">
               <label class="form-label eo-checkout mb-n0">Nama Belakang</label>
-              <h3 class="eo-checkout text-ungu">Doe</h3>
+              <h3 class="eo-checkout text-ungu">{{ $datauser->lastname }}</h3>
             </div>
           </div>
         </div>
@@ -87,13 +87,13 @@
           <div class="detnama mb-2">
             <div class="form-group">
               <label class="form-label eo-checkout mb-n0">E-mail</label>
-              <h3 class="eo-checkout text-ungu">john-doe@gmail.com</h3>
+              <h3 class="eo-checkout text-ungu">{{ $datauser->email }}</h3>
             </div>
           </div>
           <div class="detnama mb-2">
             <div class="form-group">
               <label class="form-label eo-checkout mb-n0">Nomor Telepon</label>
-              <h3 class="eo-checkout text-ungu">08123323328</h3>
+              <h3 class="eo-checkout text-ungu">{{ $datauser->phonenumber }}</h3>
             </div>
           </div>
         </div>

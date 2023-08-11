@@ -1,6 +1,6 @@
-﻿@extends('layout.navbar-home')
+﻿@extends('master.navbar-home')
 
-@section('konten')
+@section('content')
 
     <section class="wrapper bg-dark mt-n13">
       <div class="swiper-container swiper-hero dots-over" data-margin="0" data-autoplay="true" data-autoplaytime="7000" data-nav="true" data-dots="true" data-items="1">
@@ -240,8 +240,6 @@
         <div class="text-center w500 mt-4">
           <a href="{{ route('listevent') }}" class="btnmore lbhbyk">Lebih banyak...</a>
         </div>
-
-        
 
 
       </div>
