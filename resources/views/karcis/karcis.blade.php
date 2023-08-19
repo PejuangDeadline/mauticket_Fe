@@ -1,6 +1,6 @@
-﻿@extends('layout.navbar')
+﻿@extends('master.navbar')
 
-@section('konten')
+@section('content')
 
     <div class="mt-12">
       <section class="wrapper bg-gray">
@@ -56,7 +56,43 @@
 
         <div class="contaianer mb-n12">
           <div class="row mt-5">
+            <div class="row">
+              <div class="detnama">
+                <div class="form-group">
+                  <label class="form-label eo-checkout mb-n0">Nama Depan</label>
+                  <h3 class="eo-checkout text-ungu">{{ $datauser->firstname }}</h3>
+                </div>
+              </div>
+              <div class="detnama">
+                <div class="form-group">
+                  <label class="form-label eo-checkout mb-n0">Nama Belakang</label>
+                  <h3 class="eo-checkout text-ungu">{{ $datauser->lastname }}</h3>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-5">
+              <div class="detnama mb-2">
+                <div class="form-group">
+                  <label class="form-label eo-checkout mb-n0">E-mail</label>
+                  <h3 class="eo-checkout text-ungu">{{ $datauser->email }}</h3>
+                </div>
+              </div>
+              <div class="detnama mb-2">
+                <div class="form-group">
+                  <label class="form-label eo-checkout mb-n0">Nomor Telepon</label>
+                  <h3 class="eo-checkout text-ungu">{{ $datauser->phonenumber }}</h3>
+                </div>
+              </div>
+            </div>
+
             <div class="col-lg-6 mb-3">
+              <div class="form-floating">
+                <input id="namadepan" type="text" name="namadepan" class="form-control" placeholder="Masukkan Kode Referal" value="">
+                <label class="w500" style="color: black" for="namadepan">Masukkan Kode Referral</label>
+              </div>
+            </div>
+
+            {{-- <div class="col-lg-6 mb-3">
               <div class="form-floating">
                 <input id="namadepan" type="text" name="namadepan" class="form-control" placeholder="Masukkan Nama Depan" value="Joe">
                 <label class="w500" style="color: black" for="namadepan">Nama Depan</label>
@@ -67,8 +103,8 @@
                 <input id="namabelakang" type="text" name="namabelakang" class="form-control" placeholder="Masukkan Nama Belakang" value="Doe">
                 <label class="w500" style="color: black" for="namabelakang">Nama Belakang</label>
               </div>
-            </div>
-            <div class="col-lg-6 mb-3">
+            </div> --}}
+            {{-- <div class="col-lg-6 mb-3">
               <div class="form-floating">
                 <input id="email" type="text" name="email" class="form-control" placeholder="Masukkan E-mail" value="jane.doe@gmail.com">
                 <label class="w500" style="color: black" for="email">E-mail</label>
@@ -79,7 +115,7 @@
                 <input id="phonenumber" type="text" name="phonenumber" class="form-control" placeholder="Masukkan Nomor Telepon" value="822xxxx">
                 <label class="w500" style="color: black" for="phonenumber">Nomor Telepon</label>
               </div>
-            </div>
+            </div> --}}
           </div>
         </div>
 

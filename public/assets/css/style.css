@@ -188,7 +188,8 @@
 }
 body {
     /* margin: 0; */
-    margin-top: -30px;
+    /* margin-top: -30px; */
+    margin-top: 0;
     margin-bottom: 0;
     margin-left: 0;
     margin-right: 0;
@@ -762,8 +763,8 @@ progress {
     .container-lg,
     .container-md,
     .container-sm {
-        max-width: 979px;
-        /* max-width: 960px; */
+        /* max-width: 979px; */
+        max-width: 960px;
     }
 }
 
@@ -772,8 +773,8 @@ progress {
     .container-lg,
     .container-md,
     .container-sm {
-        max-width: 992px;
-        /* max-width: 960px; */
+        /* max-width: 992px; */
+        max-width: 960px;
     }
 }
 
@@ -31886,7 +31887,8 @@ button.hamburger:before {
     border: 0;
     font-size: 0.85rem;
     font-weight: 700;
-    color: #3f78e0;
+    /* color: #3f78e0; */
+    color: #7f39d8;
     transition: all 150ms ease-in-out;
     background: 0 0;
 }
@@ -31906,7 +31908,8 @@ button.hamburger:before {
     margin-top: -0.25rem;
     margin-left: -0.3rem;
     display: inline-block;
-    color: #3f78e0;
+    /* color: #3f78e0; */
+    color: #7f39d8;
 }
 .accordion-wrapper .card-header button.collapsed {
     color: #343f52;
@@ -31918,7 +31921,8 @@ button.hamburger:before {
     color: #3f78e0;
 }
 .accordion-item .card-body {
-    padding: 0 1.25rem 0.25rem 2.35rem;
+    /* padding: 0 1.25rem 0.25rem 2.35rem; */
+    padding: 1.25rem;
 }
 .accordion-item.icon .card-body {
     padding: 0 1.25rem 0.25rem 2.8rem;

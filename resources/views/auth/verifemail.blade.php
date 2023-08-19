@@ -1,6 +1,6 @@
-﻿@extends('layout.navbar')
+﻿@extends('master.navbar')
 
-@section('konten')
+@section('content')
 
     <div class="mt-12">
       <section class="wrapper bg-gray">

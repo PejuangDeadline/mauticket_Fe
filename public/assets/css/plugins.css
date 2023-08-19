@@ -6420,7 +6420,8 @@ pre[class*="language-"] {
     font-style: normal;
 }
 :root {
-    --swiper-theme-color: #007aff;
+    /* --swiper-theme-color: #007aff; */
+    --swiper-theme-color: #7f39d8;
 }
 .swiper {
     margin-left: auto;
