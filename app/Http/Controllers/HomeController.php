@@ -29,7 +29,7 @@ class HomeController extends Controller
         ];
 
         $getEvent = $this->getEvent($tokenAPI, $filter);
-        $endpointApi = 'http://127.0.0.1:7000/';
+        $endpointApi = 'http://154.56.46.3/maukarcis-admin/';
 
         $event_name = "";
         $from = "";

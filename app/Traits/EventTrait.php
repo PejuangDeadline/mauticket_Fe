@@ -7,7 +7,7 @@ trait EventTrait
     public function getEvent($token, $filter)
     {
         $client = new Client();
-        $url='http://127.0.0.1:7000/api/event/search';
+        $url='http://154.56.46.3/maukarcis-admin/api/event/search';
         $filter = $client->post($url, [
             'headers' => [
                 'Authorization' => 'Bearer ' . $token,
