@@ -20,6 +20,7 @@ use App\Http\Controllers\ValidationController;
 */
 
 Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
+Route::get('/mappingCity/{province_id}', [HomeController::class, 'selectCity'])->name('mappingCity');
 
 Route::get('/signin', [AuthController::class, 'signin'])->name('login');
 Route::post('/postsignin', [AuthController::class, 'postsignin'])->name('postsignin');
@@ -34,8 +35,9 @@ Route::get('/validation/email/{email}', [ValidationController::class, 'checkUser
 Route::get('/validation/username/{username}', [ValidationController::class, 'checkUserUsernameUnique'])->name('validation.username');
 
 Route::get('/listevent', [EventController::class, 'listevent'])->name('listevent');
+Route::post('/listevent', [EventController::class, 'listevent'])->name('listevent');
 Route::get('/event/detail', [EventController::class, 'detailevent'])->name('detailevent');
-Route::post('/event/search', [EventController::class, 'search'])->name('search');
+// Route::post('/event/search', [EventController::class, 'search'])->name('search');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
