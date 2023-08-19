@@ -8,7 +8,7 @@ trait AuthTrait
     {
         $authUsername='fe@mau.co.id';
         $authPassword='12345';
-        $url_login = 'http://127.0.0.1:7000/api/getToken';
+        $url_login = 'http://154.56.46.3/maukarcis-admin/api/getToken';
         $client = new Client();
         $request = $client->post($url_login, [
             'headers'=> ['Content-Type' => 'application/json'],
@@ -27,7 +27,7 @@ trait AuthTrait
     public function signupData($token, $data)
     {
         $client = new Client();
-        $url='http://127.0.0.1:7000/api/signup/store';
+        $url='http://154.56.46.3/maukarcis-admin/api/signup/store';
         $signup = $client->post($url, [
             'headers' => [
                 'Authorization' => 'Bearer ' . $token,
@@ -51,7 +51,7 @@ trait AuthTrait
     public function sendToken($token, $id_user, $email)
     {
         $client = new Client();
-        $url='http://127.0.0.1:7000/api/send-token';
+        $url='http://154.56.46.3/maukarcis-admin/api/send-token';
         $send = $client->post($url, [
             'headers' => [
                 'Authorization' => 'Bearer ' . $token,
@@ -71,7 +71,7 @@ trait AuthTrait
     public function verifyEmail($token, $email, $code)
     {
         $client = new Client();
-        $url='http://127.0.0.1:7000/api/verify-email';
+        $url='http://154.56.46.3/maukarcis-admin/api/verify-email';
         $verif = $client->post($url, [
             'headers' => [
                 'Authorization' => 'Bearer ' . $token,
