@@ -5,17 +5,24 @@ namespace App\Http\Controllers;
 use App\Mail\Welcoming;
 use App\Mail\SendCode;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
+// Trait
+use App\Traits\AuthTrait;
+
+// DB
+use App\Models\User;
+
+
 class AuthController extends Controller
 {
+    use AuthTrait;
+
     public function signin()
     {
-
         return view('auth.signin');
     }
 
@@ -40,17 +47,16 @@ class AuthController extends Controller
             $user = User::where('email',$email)->first();
             $status = $user->is_active;
             if($status == 0){
-                $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-                $token = substr(str_shuffle($characters), 0, 5);
+                $tokenAPI = $this->getTokenAPICMS();
+                $sendToken = $this->sendToken($tokenAPI, $user->id, $email);
 
-                //Update token
-                $updatetoken = User::where('id',$user->id)->update(['remember_token' => $token]);
-
-                //Send Token to Email
-                $sent=Mail::to($email)->send(new SendCode($token));
-
-                $error = 0;
-                return view('auth.verifemail', compact('email', 'error'));
+                if($sendToken->success=="true"){
+                    $email = $sendToken->data->email;
+                    $error = $sendToken->data->error;
+                    return view('auth.verifemail', compact('email', 'error'));
+                } else {
+                    return redirect()->back()->with(['error' => 'Maaf Server Sedang Sibuk']);
+                }
             }
             // Akun Sudah Aktif
             else{
@@ -72,15 +78,15 @@ class AuthController extends Controller
     {
         $email = decrypt($request->email);
         $code = $request->codeVerif;
+        
+        $tokenAPI = $this->getTokenAPICMS();
+        $verifEmail = $this->verifyEmail($tokenAPI, $email, $code);
 
-        $user = User::where('email', $email)->first();
-        if($code == $user->remember_token){
-            // Update Is Active User
-            $update = User::where('email', $email)->update(['is_active'=>1]);
-
+        if($verifEmail->success=="true"){
             return redirect()->route('homepage')->with(['success' => 'Sukses']);
         } else {
-            $error = 1;
+            $error = $verifEmail->data->error;
+            $email = $verifEmail->data->email;
             return view('auth.verifemail', compact('email', 'error'));
         }
     }
@@ -93,52 +99,16 @@ class AuthController extends Controller
 
     public function storesignup(Request $request)
     {
-        // dd($request->all());
-        $namadepan = $request->namadepan;
-        $namabelakang = $request->namabelakang;
-        $email = $request->email;
-        $phone = $request->phone;
-        $username = $request->username;
-        $password = $request->password;
+        $tokenAPI = $this->getTokenAPICMS();
+        $data = $request->except('_token');
+        $storedata = $this->signupData($tokenAPI, $data);
 
-        $CheckUsername = User::where('name', $username)->count();
-        $CheckEmail = User::where('email', $email)->count();
-        if($CheckUsername > 0){
-            return redirect()->back()->with(['error' => 'Username Sudah digunakan']);
-        }
-        if($CheckEmail > 0){
-            return redirect()->back()->with(['error' => 'Email Sudah digunakan']);
-        }
-
-
-        DB::beginTransaction();
-        try{
-
-            $createuser = User::create([
-                'name' => $username,
-                'firstname' => $namadepan,
-                'lastname' => $namabelakang,
-                'phonenumber' => $phone,
-                'email' => $email,
-                'password' => Hash::make($password),
-                'role' => "User",
-                'is_active' => 0,
-            ]);
-
-            // Kirim Welcoming Email
-            $recipient = $email;
-            $namauser = $namadepan." ".$namabelakang;
-            $sent=Mail::to($recipient)->send(new Welcoming($namauser));
-
-            DB::commit();
-
+        if($storedata->success=="true"){
             return redirect()->route('login')->with([
                 'success' => 'Pendaftaran Berhasil, Silahkan Login dengan akun anda'
             ]);
-
-        } catch (\Exception $e) {
-            DB::rollback();
-            return redirect()->back()->with(['error' => 'Pendaftaran Gagal!']);
+        } else {
+            return redirect()->back()->with(['error' => $storedata->data->error]);
         }
     }
 

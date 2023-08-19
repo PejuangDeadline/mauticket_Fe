@@ -206,6 +206,7 @@ $(function () {
     $('input[name="daterange"]').daterangepicker(
         {
             opens: "left",
+            autoUpdateInput: false,
         },
         function (start, end, label) {
             console.log(
@@ -214,6 +215,24 @@ $(function () {
                     " to " +
                     end.format("YYYY-MM-DD")
             );
+
+            // Populate the visible input field with the date range
+            $('input[name="daterange"]').val(
+                start.format("YYYY-MM-DD") + " - " + end.format("YYYY-MM-DD")
+            );
+
+            // Set the values of hidden inputs
+            $("#start_date").val(start.format("YYYY-MM-DD"));
+            $("#end_date").val(end.format("YYYY-MM-DD"));
+        }
+    );
+
+    $('input[name="daterange"]').on(
+        "cancel.daterangepicker",
+        function (ev, picker) {
+            $(this).val("");
+            $("#start_date").val(""); // Clear the hidden input
+            $("#end_date").val(""); // Clear the hidden input
         }
     );
 });

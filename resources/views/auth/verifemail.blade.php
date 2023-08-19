@@ -28,6 +28,11 @@
                     Maaf, Kode Tidak Cocok
                 </div>
             @endif
+            @if ($error == 2)
+                <div class="alert alert-warning">
+                    Maaf, Akun Anda Belum Aktif
+                </div>
+            @endif
             <div class="card">
               <div class="card-body text-center">
 

@@ -269,13 +269,13 @@
 
                         <div class="row">
                           <div class="w-100">
-                            <h6 class="post-title h7"><span class="badge" style="background-color: #7f39d8">1X</span>&nbsp;Royal Seat</h6>
+                            <h6 class="post-title h7">Royal Seat</h6>
                             <p class="mt-n2 textevent">Tiket dengan posisi tempat duduk nyaman & strategis</p>
                             <p class="mt-n4"><b>2023-08-08 07:00</b></p>
                           </div>
                         </div>
 
-                        <div class="row">
+                        {{-- <div class="row">
                           <div class="col-md-8 mx-auto">
                             <div class="form-floating">
                               <select class="form-select" id="seat_number" name="seat_number">
@@ -306,9 +306,9 @@
                               <label for="seat_number" style="color: black" class="form-label">Kursi</label>
                             </div>
                           </div>
-                        </div>
+                        </div> --}}
 
-                        <div class="card px-2 py-2 mt-2" style="background-color: #eaeffb">
+                        {{-- <div class="card px-2 py-2 mt-2" style="background-color: #eaeffb">
                           <div class="row">
                             <div class="col-md-8 mx-auto py-2">
                               <div class="form-floating">
@@ -320,17 +320,53 @@
                               <button type="submit" class="btn btn-sm btn-warning" style="background-color: goldenrod">Generate</button>
                             </div>
                           </div>
+                        </div> --}}
+
+                        <div class="container mt-4 mb-4">
+                          <label class="w500 mb-2" style="color: black" for="referal">Jumlah Karcis</label>
+                          <div class="row">
+                            <div class="col-md-8 mx-auto">
+                              <div class="input-group">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon1" onclick="decreaseQuantity()">-</button>
+                                <input type="text" class="form-control text-center" placeholder="0" aria-label="quantity" aria-describedby="button-addon1 button-addon2" id="quantity-input" value="1">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="increaseQuantity()">+</button>
+                            </div>
+                            </div>
+                          </div>
                         </div>
                         
+                        <script>
+                            const quantityInput = document.getElementById("quantity-input");
+                        
+                            const maxQty = 4; // Example maximum quantity
 
-                        <div class="mx-auto mt-4">
+                            function increaseQuantity() {
+                                let currentVal = parseInt(quantityInput.value) || 0;
+                                if (currentVal < maxQty) {
+                                    quantityInput.value = currentVal + 1;
+                                } else {
+                                    alert('Kuantitas maksimum karcis tercapai!'); // Optionally notify the user
+                                }
+                            }
+
+                            function decreaseQuantity() {
+                                let currentVal = parseInt(quantityInput.value) || 0;
+                                if (currentVal > 0) {
+                                    quantityInput.value = currentVal - 1;
+                                }
+                            }
+
+                        </script>
+                        
+
+                        {{-- <div class="mx-auto mt-4">
                           <del><span class="amount">Rp 300.000</span></del>
                           <h3><span class="text-ungu w700">Rp 280.000</span></li><h3>
-                        </div>
+                        </div> --}}
 
                       </div>
                       <div class="modal-footer py-2">
-                        <button type="submit" class="btn btn-primary mx-auto" name="sb"><i class="uil uil-shopping-cart"></i>&nbsp;Tambah Ke Keranjang</button>
+                        <button type="submit" class="btn btn-primary mx-auto" name="sb"><i class="uil uil-shopping-cart"></i>&nbsp;Tambah</button>
                       </div>
                     </div>
                   </div>

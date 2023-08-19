@@ -62,26 +62,32 @@ function checkInputs1() {
         emails = 0;
         return setErrorFor(email, " *Email Tidak Valid");
     }
-    //Unique Email
-    var url = document.getElementById("urlvalidemail").value;
-    url = url.replace(":email", emailValue);
 
-    if (emailValue) {
-        $.ajax({
-            url: url,
-            type: "GET",
-            dataType: "json",
-            success: function (data) {
-                if (data === false) {
-                    emails = 0;
-                    return setErrorFor(email, " *Email Sudah Digunakan");
-                } else {
-                    emails = 1;
-                    setSuccessFor(email);
-                }
-            },
-        });
+    // else dimatikan kalo menggunakan validasi unique email
+    else {
+        emails = 1;
+        setSuccessFor(email);
     }
+    //Unique Email
+    // var url = document.getElementById("urlvalidemail").value;
+    // url = url.replace(":email", emailValue);
+
+    // if (emailValue) {
+    //     $.ajax({
+    //         url: url,
+    //         type: "GET",
+    //         dataType: "json",
+    //         success: function (data) {
+    //             if (data === false) {
+    //                 emails = 0;
+    //                 return setErrorFor(email, " *Email Sudah Digunakan");
+    //             } else {
+    //                 emails = 1;
+    //                 setSuccessFor(email);
+    //             }
+    //         },
+    //     });
+    // }
 
     if (phoneValue === "") {
         phones = 0;
