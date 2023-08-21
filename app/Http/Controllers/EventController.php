@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request;
 use DB;
+use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Exception\ClientException;
+
 
 // Trait
 use App\Traits\AuthTrait;
@@ -76,10 +81,15 @@ class EventController extends Controller
         return view('event.listevent', compact('event_name', 'from', 'until', 'city', 'daterange', 'getEvents', 'endpointApi', 'provinces', 'pr'));
     }
 
-    public function detailevent()
+    public function detailevent($id)
     {
+        $tokenAPI = $this->getTokenAPICMS();
+        $getEventDetail = $this->getEventDetail($tokenAPI, $id);
 
-        return view('event.detailevent');
+        $endpointApi = 'http://154.56.46.3/maukarcis-admin/';
+        // dd($getEventDetail);
+
+        return view('event.detailevent', compact('getEventDetail', 'endpointApi'));
     }
 
     public function search(Request $request)
@@ -90,5 +100,59 @@ class EventController extends Controller
         $daterange = $request->daterange;
 
         return view('event.listevent', compact('keyword', 'state', 'daterange'));
+    }
+
+    public function getCategory(Request $request)
+    {
+        $idEvent = $request->idEvent;
+        $showtime_start = $request->showtime_start;
+
+        $tokenAPI = $this->getTokenAPICMS();
+        $client = new Client();
+        $url='http://154.56.46.3/maukarcis-admin/api/showtime';
+        $filter = $client->post($url, [
+            'headers' => [
+                'Authorization' => 'Bearer ' . $tokenAPI,
+                'Content-Type' => 'application/json', 
+                'Accept' => 'application/json'
+            ],
+            'body' => json_encode([
+                'id_event' => $idEvent,
+                'showtime' => $showtime_start
+            ])
+        ]); 
+        $response = json_decode($filter->getBody()->getContents());
+        $response = $response->data->showtimes;
+
+        return $response;
+    }
+
+    public function storeChart(Request $request)
+    {
+        $id_user = Auth::user()->id;
+        
+        $data = $request->except('_token');
+        $tokenAPI = $this->getTokenAPICMS();
+
+        try {
+            $storechart = $this->addChart($tokenAPI, $data, $id_user);
+            $data = $storechart->json();
+            
+            if ($data['success'] == true) {
+                // Handle the successful API response
+                session()->flash('itemAddedToCart', true);
+                return redirect()->back();
+            } else {
+                // Handle the unsuccessful API response
+                session()->flash('itemFailedAddToCart', true);
+                return redirect()->back();
+            }
+        } catch (ClientException $e) {
+            session()->flash('itemFailedAddToCart', true);
+            return redirect()->back();
+        } catch (\Exception $e) {
+            session()->flash('itemFailedAddToCart', true);
+            return redirect()->back();
+        }
     }
 }

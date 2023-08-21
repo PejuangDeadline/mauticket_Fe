@@ -54,7 +54,7 @@
                       if (!$('#verifForm').valid()) return false;
       
                       $('#verifForm button[name=sb]').attr("disabled", "disabled");
-                      $('#verifForm button[name=sb]').html("Please Wait..");
+                      $('#verifForm button[name=sb]').html("Silahkan Tunggu..");
                       return true;
                   });
                 </script>

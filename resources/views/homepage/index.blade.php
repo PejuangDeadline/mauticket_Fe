@@ -149,8 +149,7 @@
                 <div class="card">
                   <article>
                     <figure class="overlay overlay-1 hover-scale rounded mb-5">
-                      {{-- <a href="{{ route('detailevent') }}">  --}}
-                      <a href="{{ route('detailevent') }}"> 
+                      <a href="{{ route('detailevent', $event->id) }}"> 
                         <img class="imag" src="{{ $endpointApi.$event->banner }}" alt="" />
                       </a>
                       <figcaption>
@@ -174,7 +173,18 @@
                               <li><span class="text-dark w400 textlokasi"><img src="{{ asset('assets/img/logo/clock.svg') }}" style="width: 0.75rem"> {{ date("H:i A", strtotime($event->showtime_start)) }}</span></li>
                             </ul>
                             <ul class="post-meta mb-3">
-                              <li><span class="text-dark w400 textlokasi"><img src="{{ asset('assets/img/logo/map.svg') }}" style="width: 0.75rem"> {!! $event->event_address !!} </span></li>
+                              <?php 
+                                $find2 = '<p>';
+                                $replaceWith2 = '';
+
+                                $newString2 = str_replace($find2, $replaceWith2, $event->event_address);
+
+                                $find3 = '</p>';
+                                $replaceWith3 = '';
+
+                                $newString3 = str_replace($find3, $replaceWith3, $newString2);
+                              ?>
+                              <li><span class="text-dark w400 textlokasi"><img src="{{ asset('assets/img/logo/map.svg') }}" style="width: 0.75rem"> {!! $newString3 !!} </span></li>
                             </ul>
                           </div>
                           <div class="detailevent text-end">

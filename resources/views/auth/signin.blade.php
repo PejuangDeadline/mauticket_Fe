@@ -59,7 +59,7 @@
                       if (!$('#SigninForm').valid()) return false;
       
                       $('#SigninForm button[name=sb]').attr("disabled", "disabled");
-                      $('#SigninForm button[name=sb]').html("Please Wait..");
+                      $('#SigninForm button[name=sb]').html("Silahkan Tunggu..");
                       return true;
                   });
                 </script>

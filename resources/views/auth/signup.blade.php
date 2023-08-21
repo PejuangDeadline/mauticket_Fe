@@ -162,7 +162,7 @@
                       if (!$('#SignupForm').valid()) return false;
       
                       $('#SignupForm button[name=sb]').attr("disabled", "disabled");
-                      $('#SignupForm button[name=sb]').html("Please Wait..");
+                      $('#SignupForm button[name=sb]').html("Silahkan Tunggu..");
                       return true;
                   });
                 </script>

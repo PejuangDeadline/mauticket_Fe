@@ -36,8 +36,9 @@ Route::get('/validation/username/{username}', [ValidationController::class, 'che
 
 Route::get('/listevent', [EventController::class, 'listevent'])->name('listevent');
 Route::post('/listevent', [EventController::class, 'listevent'])->name('listevent');
-Route::get('/event/detail', [EventController::class, 'detailevent'])->name('detailevent');
-// Route::post('/event/search', [EventController::class, 'search'])->name('search');
+Route::get('/event/detail/{id}', [EventController::class, 'detailevent'])->name('detailevent');
+Route::post('/getCategory', [EventController::class, 'getCategory'])->name('getCategory');
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
@@ -48,4 +49,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/karcis', [KarcisController::class, 'karcis'])->name('karcis');
     Route::get('/listkarcis', [KarcisController::class, 'listkarcis'])->name('listkarcis');
     Route::get('/karcisuser', [KarcisController::class, 'karcisuser'])->name('karcisuser');
+
+    Route::post('/storechart', [EventController::class, 'storechart'])->name('storechart');
+    
 });

@@ -84,6 +84,9 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }
+#event-description {
+    text-align: justify;
+}
 
 .textlokasi {
     overflow: hidden;
