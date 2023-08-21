@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\KarcisController;
 use App\Http\Controllers\ValidationController;
+use App\Http\Controllers\ChartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,5 +52,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/karcisuser', [KarcisController::class, 'karcisuser'])->name('karcisuser');
 
     Route::post('/storechart', [EventController::class, 'storechart'])->name('storechart');
+
+    Route::get('/indexchart/{id}', [ChartController::class, 'indexchart'])->name('indexchart');
+    Route::post('/checkoutchart', [ChartController::class, 'checkoutchart'])->name('checkoutchart');
+    Route::post('/deletechart/{id}', [ChartController::class, 'delete'])->name('deletechart');
     
 });

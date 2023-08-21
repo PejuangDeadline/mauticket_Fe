@@ -284,8 +284,7 @@
               var ss = $(this).attr('showtime_start');
 
               var url = '{{ route("getCategory") }}';
-
-              // AJAX call
+              
               if (url) {
                 $.ajax({
                   url: url,
@@ -303,10 +302,25 @@
                     $('#loading').hide();
 
                     $.each(data, function(index, item) {
+                      prices = item.price.replace('.00', '');
+
+                      if (item.price === null || item.price === undefined) {
+                          return;
+                      }
+
+                      let priceValue = parseFloat(item.price);
+                      if (isNaN(priceValue)) {
+                          return;
+                      }
+
+                      let parts = priceValue.toFixed(2).split('.');
+                      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                      let priceFormatted = 'Rp. ' + parts.join(',');
+
                       html += `
                         <div class="card cardharga mb-4">
                             <h6 class="post-title h3">${item.category}</h6>
-                            <div class="note-harga"><h4><span class="text-ungu w700">${item.price}</span></h4></div>
+                            <div class="note-harga"><h4><span class="text-ungu w700">${priceFormatted}</span></h4></div>
                             <a class="button-harga btnorder order" data-bs-toggle="modal" data-bs-target="#modal-book${item.id_category}">
                                 Beli
                             </a>
@@ -322,10 +336,9 @@
                                           <div class="modal-body text-center py-4 mx-auto" style="max-height: 65vh; overflow-y: auto;">
                                               <div class="row">
                                                   <div class="w-100">
-                                                      <span>Kategori Tiket :</span>
-                                                      <h6 class="post-title h7">${item.category}</h6>
-                                                      <span>Pada :</span>
-                                                      <p><b>${item.showtime_start}</b></p>
+                                                      <span>Kategori Tiket : <b>${item.category}</b></span>
+                                                      <br>
+                                                      <span>Pada : <b>${item.showtime_start}</b></span>
                                                   </div>
                                               </div>
                                               <input type="hidden" id="max${item.id_category}" value="${item.qty}">
@@ -368,6 +381,7 @@
                         const maxQty = (max > 4) ? 4 : max;
 
                         let currentVal = parseInt(quantityInput.val()) || 0;
+
                         if (currentVal < maxQty) {
                             quantityInput.val(currentVal + 1);
                         } else {
@@ -378,7 +392,9 @@
                     $(document).on('click', '.decrease-btn', function() {
                         const itemId = $(this).data('id');
                         const quantityInput = $(`#quantity-input${itemId}`);
+
                         let currentVal = parseInt(quantityInput.val()) || 0;
+
                         if (currentVal > 1) {
                             quantityInput.val(currentVal - 1);
                         } else {

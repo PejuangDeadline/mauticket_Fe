@@ -136,9 +136,8 @@ class EventController extends Controller
 
         try {
             $storechart = $this->addChart($tokenAPI, $data, $id_user);
-            $data = $storechart->json();
-            
-            if ($data['success'] == true) {
+
+            if ($storechart->success == true) {
                 // Handle the successful API response
                 session()->flash('itemAddedToCart', true);
                 return redirect()->back();

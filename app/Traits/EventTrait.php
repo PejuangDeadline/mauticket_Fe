@@ -64,7 +64,9 @@ trait EventTrait
                 'qty' => $data['qty']
             ])
         ]);
+        
+        $response = json_decode($add->getBody()->getContents());
 
-        return $add;
+        return $response;
     }
 }
