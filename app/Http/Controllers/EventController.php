@@ -9,6 +9,7 @@ use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use GuzzleHttp\Exception\ClientException;
+use App\Models\User;
 
 
 // Trait
@@ -130,28 +131,35 @@ class EventController extends Controller
     public function storeChart(Request $request)
     {
         $id_user = Auth::user()->id;
-        
-        $data = $request->except('_token');
-        $tokenAPI = $this->getTokenAPICMS();
+        $datauser = User::where('id', $id_user)->first();
 
-        try {
-            $storechart = $this->addChart($tokenAPI, $data, $id_user);
+        if($datauser->is_active == 0){
+            $email = $datauser->email;
+            $error = 2;
+            return view('auth.verifemail', compact('email', 'error'));
+        } else {
+            $data = $request->except('_token');
+            $tokenAPI = $this->getTokenAPICMS();
 
-            if ($storechart->success == true) {
-                // Handle the successful API response
-                session()->flash('itemAddedToCart', true);
+            try {
+                $storechart = $this->addChart($tokenAPI, $data, $id_user);
+
+                if ($storechart->success == true) {
+                    // Handle the successful API response
+                    session()->flash('itemAddedToCart', true);
+                    return redirect()->back();
+                } else {
+                    // Handle the unsuccessful API response
+                    session()->flash('itemFailedAddToCart', true);
+                    return redirect()->back();
+                }
+            } catch (ClientException $e) {
+                session()->flash('itemFailedAddToCart', true);
                 return redirect()->back();
-            } else {
-                // Handle the unsuccessful API response
+            } catch (\Exception $e) {
                 session()->flash('itemFailedAddToCart', true);
                 return redirect()->back();
             }
-        } catch (ClientException $e) {
-            session()->flash('itemFailedAddToCart', true);
-            return redirect()->back();
-        } catch (\Exception $e) {
-            session()->flash('itemFailedAddToCart', true);
-            return redirect()->back();
         }
     }
 }
