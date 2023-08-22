@@ -20,6 +20,7 @@ class ChartController extends Controller
         $chart = $this->getChart($tokenAPI, $id_user);
 
         // dd($chart);
+        // return $chart;
 
         return view('chart.chart', compact('chart'));
 

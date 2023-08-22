@@ -44,14 +44,32 @@
         </div>
     </div>
   </div>
+  @php
+    $eventCount = 0;
+    if(isset($chart->data) && (is_array($chart->data) || is_object($chart->data))) {
+        $eventCount = count((array) $chart->data);
+    }
+  @endphp
+  {{-- <p>Total Events: {{ $eventCount }}</p> --}}
+
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <h1 class="fs-30 text-ungu"><i class="uil uil-shopping-cart"></i></h1>
+        <h3 class="display-4 mt-n2 px-xl-11">Keranjang Anda</h3>
+      </div>
+    </div>
+  </div>
 
   @foreach($chart->data as $eventName => $tickets)
+
+  {{-- <pre>{{ print_r($chart->data, true) }}</pre> --}}
     <div class="row" id="poster">
       <div class="card px-4 py-4 mt-4 col-lg-6 mx-auto">
         <div class="shopping-cart-item d-flex justify-content-center mb-4">
           <div class="d-flex flex-row">
             <div class="w-100 ms-4">
-              <h4 class="post-title fs-16 lh-xs mb-1"><a href="shop-product.html" class="link-dark">{{ $eventName }}</a></h4>
+              <h4 class="post-title fs-16 lh-xs mb-1"><a>{{ $eventName }}</a></h4>
             </div>
           </div>
         </div>
@@ -59,13 +77,15 @@
         <div class="shopping-cart-item d-flex justify-content-between mb-2">
           <div class="d-flex flex-row">
             <div class="w-100 ms-4">
-              <h4 class="post-title fs-14 lh-xs mb-1">{{ $ticket->category }}</h4>
-              <p class="price fs-sm"><span class="amount">{{ $ticket->price }}</span></p>
+              <h4 class="post-title text-ungu fs-16 lh-xs mb-1 mt-2">{{ $ticket->category }}</h4>
+              <p class="price fs-sm"><span class="amount"><b>Rp. {{ number_format($ticket->price, 2, ',', '.') }}</b></span></p>
             </div>
           </div>
           <div class="ms-2"><a href="#" class="link-dark"><i class="uil uil-trash-alt" data-bs-toggle="modal" data-bs-target="#modal-delete{{ $ticket->id }}"></i></a></div>
         </div>
-        <hr class="mt-0 mb-0">
+        <hr class="mt-0 mb-0" style="height: 1.5px; border: none; background-color: #FFD957;">
+
+        {{-- <hr class="mt-0 mb-0"> --}}
 
         @endforeach
 

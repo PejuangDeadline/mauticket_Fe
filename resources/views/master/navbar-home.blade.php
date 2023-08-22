@@ -100,6 +100,7 @@
                     {{-- <a class="nav-link position-relative d-flex flex-row align-items-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cart"> --}}
                     <a href="{{ route('indexchart', Auth::user()->id) }}" class="nav-link position-relative d-flex flex-row align-items-center"\>
                       <i class="uil uil-shopping-cart"></i>
+                      &nbsp;&nbsp;&nbsp;|&nbsp;
                     </a>
                   </li>
                   {{-- Profil User --}}
